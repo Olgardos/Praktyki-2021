@@ -1,0 +1,75 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Robert Fidytek}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+
+\begin{document}
+\maketitle
+
+
+\kategoria{Wikieł/P1.5b}
+\zadStart{Zadanie z Wikieł P 1.5 b) moja wersja nr [nrWersji]}
+%[a]:[1,2,3,4,5,6,7,8,9]
+%[b]:[2,3,4,5,6,7,8,9]
+%[c]:[2,3,4,5,6,7,8,9]
+%[d]:[1,2,3,4,5,6,7,8,9]
+%[bcm]=-[b]-[c]
+%[adm]=[d]-[a]
+%[bcp]=-[b]+[c]
+%[adp]=-[d]-[a]
+%[bcm]!=0 and [bcp]!=0 and math.gcd([adm],[bcm])==1 and math.gcd([adp],[bcp])==1 and [c]>[d] and [adm]!=0 and [adp]!=0 and [bcm]!=1 and [bcp]!=1
+
+
+Rozwiązać równanie  $|{[a]-[b]x}| = |{[c]x+[d]}|$.
+\zadStop
+\rozwStart{Joanna Świerzbin}{}
+$$|{[a]-[b]x}| = |{[c]x+[d]}| \Leftrightarrow {[a]-[b]x} = {[c]x+[d]} \vee {[a]-[b]x} = {-[c]x-[d]}  \Leftrightarrow$$
+$$\Leftrightarrow {[bcm]x} = {[adm]} \vee {[bcp]x} = {[adp]}  \Leftrightarrow$$
+$$\Leftrightarrow {x} = {\frac{[adm]}{[bcm]}} \vee {x} = {\frac{[adp]}{[bcp]}} $$
+Zatem $ {x} = {\frac{[adm]}{[bcm]}} $ i ${x} = {\frac{[adp]}{[bcp]}} $ jest rozwiązaniem rozważanego równania.
+\rozwStop
+\odpStart
+$ {x} = {\frac{[adm]}{[bcm]}} $ i ${x} = {\frac{[adp]}{[bcp]}} $
+\odpStop
+\testStart
+A.$ {x} = {\frac{[adm]}{[bcm]}} $ i ${x} = {\frac{[adp]}{[bcp]}} $\\
+B.$ {x} = {\frac{[adm]}{[bcm]}} $ \\
+C.$ {x} = {\frac{[adp]}{[bcp]}} $ \\
+D.$ {x} = {\frac{[bcm]}{[adm]}} $ i ${x} = {\frac{[adp]}{[bcp]}} $\\
+E.$ {x} = {\frac{[adm]}{[bcm]}} $ i ${x} = {\frac{[bcp]}{[adp]}} $\\
+F.$ {x} = {\frac{[adm]}{[bcm]}} $ i ${x} = {\frac{[adm]}{[bcp]}} $ \\
+G.$ {x} = {\frac{[adp]}{[bcm]}} $ i ${x} = {\frac{[adp]}{[bcp]}} $\\
+H.$ {x} = {\frac{[adm]}{[bcp]}} $ i ${x} = {\frac{[adp]}{[bcp]}} $
+\testStop
+\kluczStart
+A
+\kluczStop
+
+
+
+\end{document}

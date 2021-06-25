@@ -32,34 +32,35 @@
 \maketitle
 
 
-\kategoria{Wikieł/Z1.70h}
-\zadStart{Zadanie z Wikieł Z 1.70h) moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5]
-%[p2]:[2,3,4,5]
-%[p3]:[2,3,4,5]
-%[p13]=[p1]*[p1]*[p1]
-%[p23]=[p2]*[p2]*[p2]
-%[p33]=[p3]*[p3]*[p3]
-%[p2p3]=[p2]*[p3]
-%[p1p3]=[p1]*[p3]
-%[p23p33]=[p23]*[p33]
-%[p13p33]=[p13]*[p33]
-%math.gcd([p1],[p2])==1 and math.gcd([p1],[p3])==1
-Rozwiązać nierówności $\frac{[p13]}{[p23]x^3} \geq [p33]$
+\kategoria{Wikieł/Z1.149}
+\zadStart{Zadanie z Wikieł Z 1.14 g) moja wersja nr [nrWersji]}
+%[a]:[1,2,3,4,5,6,7,8,9]
+%[b]:[2,3,4,5,6,7,8,9]
+%[c]:[1,2,3,4,5,6,7,8,9]
+%[bc]=[b]*[c]
+%[abcp]=[bc]+[a]
+%[abcm]=[bc]-[a]
+%[bbp]=[b]+[b]
+%math.gcd([abcp],[bbp])==1 and [a]!=[bc]
+Rozwiązać równanie  $|[a]-[b]x| = [b]|x-[c]|$.
 \zadStop
-\rozwStart{Jakub Janik}{}
-$$\frac{[p13]}{[p23]x^3} \geq [p33] \Leftrightarrow \frac{[p13]}{[p23]} \geq [p33]x^3$$
-$$\frac{[p13]}{[p23]*[p33]} \geq x^3 \Leftrightarrow \frac{[p13]}{[p23p33]} \geq x^3$$
-$$\frac{[p1]}{[p2p3]} \geq x$$
+\rozwStart{Joanna Świerzbin}{}
+$$|[a]-[b]x| = [b]|x-[c]|$$
+$$[a]-[b]x = [b]x-[bc] \vee [a]-[b]x = -[b]x+[bc] $$
+$$[abcp]= [bbp]x \vee 0 = [abcm] $$
+$$\frac{[abcp]}{[bbp]}=x \vee 0 = [abcm] $$
+$$\frac{[abcp]}{[bbp]}=x \vee x \in \emptyset $$
+$$x=\frac{[abcp]}{[bbp]}$$
 \rozwStop
 \odpStart
-$\frac{[p1]}{[p2p3]} \geq x; x \neq 0$
+$x=\frac{[abcp]}{[bbp]}$
 \odpStop
 \testStart
-A.$\frac{[p1]}{[p2p3]} \geq x; x \neq 0$
-B.$\frac{[p1]}{[p2p3]} \leq x; x \neq 0$
-C.$\frac{[p1p3]}{[p2]} \geq x; x \neq 0$
-D.$\frac{[p1p3]}{[p2]} \leq x; x \neq 0$
+A. $x=\frac{[abcp]}{[bbp]}$
+B. $x=-\frac{[abcp]}{[bbp]}$
+C. $x \in \emptyset $
+D. $x=\frac{[bbp]}{[abcp]}$
+E. $x=\frac{[bc]}{[bbp]}$
 \testStop
 \kluczStart
 A

@@ -32,27 +32,50 @@
 \maketitle
 
 
-\kategoria{Wikieł/P1.34a}
-\zadStart{Zadanie z Wikieł P 1.34a) moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-%[p2]:[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-%[p12]=[p1]*[p1]
-%[p22]=[p2]*[p2]
-%math.gcd([p1],[p2])==1
-Rozwiązać nierówności $[p12]x^2-[p22]\leq 0$
+\kategoria{Wikieł/Z1.15 n}
+\zadStart{Zadanie z Wikieł Z 1.15 n) moja wersja nr [nrWersji]}
+%[a]:[2,3,4,5,6,7,8,9]
+%[b]:[1,2,3,4,5,6,7,8,9]
+%[c]=[a]+[a]
+%math.gcd([b],[a])==1 and math.gcd([c],[b])==1 and [c]!=0
+
+
+Rozwiązać nierówności  $|[a]x+[b]| < [a]|x|$.
 \zadStop
-\rozwStart{Jakub Janik}{}
-$$[p12]x^2-[p22]\leq 0 \Leftrightarrow x^2 \leq \frac{[p22]}{[p12]}$$
-$$|x| \leq \frac{[p2]}{[p1]} \Leftrightarrow -\frac{[p2]}{[p1]} \leq x \leq \frac{[p2]}{[p1]}$$
+\rozwStart{Joanna Świerzbin}{}
+$$|[a]x+[b]| < [a]|x|$$
+$$[a]x+[b] = 0 \Rightarrow [a]x = -[b] \Rightarrow x = \frac{-[b]}{[a]} $$
+$$[a]x = 0 \Rightarrow x=0 $$
+\begin{enumerate}
+\item $$x \in \left( -\infty , \frac{-[b]}{[a]} \right) \land -\left([a]x+[b]\right)<-[a]x$$
+$$x \in \left( -\infty , \frac{-[b]}{[a]} \right) \land -[a]x-[b]<-[a]x$$
+$$x \in \left( -\infty , \frac{-[b]}{[a]} \right) \land 0<[b]$$
+$$x \in \left( -\infty , \frac{-[b]}{[a]} \right) \land x \in \mathbb{R}$$
+$$x \in \left( -\infty , \frac{-[b]}{[a]} \right)$$
+
+\item $$x \in \left[ \frac{-[b]}{[a]},0 \right) \land ([a]x+[b])<-[a]x$$
+$$x \in \left[ \frac{-[b]}{[a]},0 \right) \land [c]x<-[b]$$
+$$x \in \left[ \frac{-[b]}{[a]},0 \right) \land x<\frac{-[b]}{[c]}$$
+$$x \in \left[ \frac{-[b]}{[a]},0 \right) \land x\in \left(-\infty,\frac{-[b]}{[c]}\right)$$
+$$x \in \left[ \frac{-[b]}{[a]} ,\frac{-[b]}{[c]}\right)$$
+
+\item $$x \in \left[0 , \infty \right) \land ([a]x+[b])<[a]x$$
+ $$x \in \left[0 , \infty \right) \land 0<-[b]$$
+ $$x \in \left[0 , \infty \right) \land x \in \emptyset$$
+ $$ x \in \emptyset$$
+\end{enumerate}
+$$x \in \left( -\infty , \frac{-[b]}{[a]} \right) \vee x \in \left[ \frac{-[b]}{[a]} ,\frac{-[b]}{[c]}\right) \vee  x \in \emptyset $$
+$$x \in \left( -\infty , \frac{-[b]}{[c]}\right) $$
 \rozwStop
 \odpStart
-$-\frac{[p2]}{[p1]} \leq x \leq \frac{[p2]}{[p1]}$
+$x \in \left( -\infty , \frac{-[b]}{[c]}\right) $
 \odpStop
 \testStart
-A.$-\frac{[p2]}{[p1]} \leq x \leq \frac{[p2]}{[p1]}$
-B.$-\frac{[p1]}{[p2]} \leq x \leq \frac{[p1]}{[p2]}$
-C.$-\frac{[p22]}{[p12]} \leq x \leq \frac{[p22]}{[p12]}$
-D.$-\frac{[p12]}{[p22]} \leq x \leq \frac{[p12]}{[p22]}$
+A. $x \in \left( -\infty , \frac{-[b]}{[c]}\right) $
+B. $x \in \left( -\infty , \frac{[b]}{[c]}\right) $
+C. $x \in \mathbb{R} $
+D. $x \in \left( \frac{-[b]}{[a]} , \frac{-[b]}{[c]}\right) $
+E. $ x \in \emptyset $
 \testStop
 \kluczStart
 A

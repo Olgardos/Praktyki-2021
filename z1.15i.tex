@@ -32,31 +32,39 @@
 \maketitle
 
 
-\kategoria{Wikieł/P1.11b}
-\zadStart{Zadanie z Wikieł P 1.11b) moja wersja nr [nrWersji]}
-%[p1]:[5,6,7,8,9,10,11,12,13,14,15]
-%[p2]:[5,6,7,8,9,10,11,12,13,14,15]
-%[x1]:[1]
-%[x2]:[2]
-%[p3]=[p1]+[x1]
-%[p4]=[p1]+[x2]
-%[p5]=[p2]+[x1]
-%[t1]=[p4]*[p5]
-%[t2]=[p1]*[p2]
-%[wyn]=[p3]*[p4]*[p5]
-Uprościć ułamek $\frac{[p4]!*[p5]!}{[p1]!*[p2]!}$.
+\kategoria{Wikieł/Z1.15 i}
+\zadStart{Zadanie z Wikieł Z 1.15 i) moja wersja nr [nrWersji]}
+%[a]:[1,2,3,4,5,6,7,8,9]
+%[b]:[2,3,4,5,6,7,8,9]
+%[c]:[1,2,3,4,5,6,7,8,9]
+%[d]:[1,2,3,4,5,6,7,8,9]
+%[acm]=-[a]+[c]
+%[acp]=[a]+[c]
+%[dcm]=-[d]+[c]
+%[dcp]=[d]+[c]
+%math.gcd([acm],[b])==1 and math.gcd([acp],[b])==1 and math.gcd([dcm],[b])==1 and math.gcd([dcp],[b])==1 and [a]<[d] and [acm]!=0 and [acp] !=0 and [dcm]!=0 and [dcp]!=0
+
+
+Rozwiązać nierówności  $[a] \leq |{[b]x-[c]}| < [d]$.
 \zadStop
-\rozwStart{Jakub Janik}{}
-$$\frac{[p4]!*[p5]!}{[p1]!*[p2]!}=\frac{[p1]!*[p3]*[p4]*[p2]!*[p5]}{[p1]!*[p2]!}= $$
-$$[p3]*[p4]*[p5]=[wyn]$$
+\rozwStart{Joanna Świerzbin}{}
+$$[a] \leq |{[b]x-[c]}| < [d]$$
+$$ |{[b]x-[c]}| \geq [a] \land |{[b]x-[c]}| < [d]$$
+$$ ( {[b]x-[c]} \leq -[a] \vee {[b]x-[c]} \geq [a] ) \land ( {[b]x-[c]} > -[d] \land {[b]x-[c]} < [d] )$$
+$$ ( {[b]x} \leq [acm] \vee {[b]x} \geq [acp] ) \land ( {[b]x} > [dcm] \land {[b]x} < [dcp] )$$
+$$ \left( {x} \leq \frac{[acm]}{[b]} \vee {x} \geq \frac{[acp]}{[b]} \right) \land \left( {x} > \frac{[dcm]}{[b]} \land {x} < \frac{[dcp]}{[b]} \right)$$
+$$ x \in \left( -\infty, \frac{[acm]}{[b]} \right] \cup \left[ \frac{[acp]}{[b]}, \infty \right) \land x \in \left( \frac{[dcm]}{[b]} ,\frac{[dcp]}{[b]} \right)$$
+$$ x \in \left( \frac{[dcm]}{[b]}, \frac{[acm]}{[b]} \right] \cup \left[ \frac{[acp]}{[b]}, \frac{[dcp]}{[b]} \right)$$
 \rozwStop
 \odpStart
-$[wyn]$
+$ x \in \left( \frac{[dcm]}{[b]}, \frac{[acm]}{[b]} \right] \cup \left[ \frac{[acp]}{[b]}, \frac{[dcp]}{[b]} \right)$
 \odpStop
 \testStart
-A.$[wyn]$
-B.$\frac{1}{[wyn]}$
-C.$\frac{[t1]}{[t2]}$
+A. $ x \in \left( \frac{[dcm]}{[b]}, \frac{[acm]}{[b]} \right] \cup \left[ \frac{[acp]}{[b]}, \frac{[dcp]}{[b]} \right)$\\
+B. $ x \in \left( \frac{[dcm]}{[b]}, \frac{[acm]}{[b]} \right] $\\
+C. $ x \in  \left[ \frac{[acp]}{[b]}, \frac{[dcp]}{[b]} \right)$\\
+D. $ x \in \left( -\infty, \frac{[acm]}{[b]} \right] \cup \left[ \frac{[acp]}{[b]}, \frac{[dcp]}{[b]} \right)$\\
+E. $ x \in \emptyset $
 \testStop
 \kluczStart
 A

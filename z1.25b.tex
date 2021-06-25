@@ -32,34 +32,32 @@
 \maketitle
 
 
-\kategoria{Wikieł/Z1.70i}
-\zadStart{Zadanie z Wikieł Z 1.70i) moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5]
-%[p2]:[2,3,4,5]
-%[p3]:[2,3,4,5]
-%[p13]=[p1]*[p1]*[p1]*[p1]
-%[p23]=[p2]*[p2]*[p2]*[p2]
-%[p33]=[p3]*[p3]*[p3]*[p3]
-%[p2p3]=[p2]*[p3]
-%[p1p3]=[p1]*[p3]
-%[p23p33]=[p23]*[p33]
-%[p13p33]=[p13]*[p33]
-%math.gcd([p1],[p2])==1 and math.gcd([p1],[p3])==1
-Rozwiązać nierówności $\frac{[p13]}{[p23]x^3} \leq [p33]x$
+\kategoria{Wikieł/Z1.25b}
+\zadStart{Zadanie z Wikieł Z 1.25 b) moja wersja nr [nrWersji]}
+%[a]:[2,3,4,5,6,7,8,9]
+%[b]:[2,3,4,5,6,7,8,9]
+%[c]:[1,2,3,4,5,6,7,8,9]
+%math.gcd([a],[c])==1 
+
+
+Wyznacz dziedzinę funkcji określonej podanym wzorem  $f(x)=\frac{\sqrt{[a]x+[c]}}{[b]x}$.
 \zadStop
-\rozwStart{Jakub Janik}{}
-$$\frac{[p13]}{[p23]x^3} \leq [p33]x \Leftrightarrow \frac{[p13]}{[p23]} \leq [p33]x^4$$
-$$\frac{[p13]}{[p23]*[p33]} \leq x^4 \Leftrightarrow \frac{[p13]}{[p23p33]} \leq x^4$$
-$$\frac{[p1]}{[p2p3]} \leq |x| \Leftrightarrow \frac{[p1]}{[p2p3]} \leq x \lor -\frac{[p1]}{[p2p3]} \geq x$$
+\rozwStart{Joanna Świerzbin}{}
+$$f(x)=\frac{\sqrt{[a]x+[c]}}{[b]x}$$
+$$x \neq 0 \land [a]x \geq -[c] $$
+$$x \neq 0 \land x \geq -\frac{[c]}{[a]} $$
+$$x \in \left[ -\frac{[c]}{[a]} , 0 \right) \cup \left(0,\infty \right) $$
 \rozwStop
 \odpStart
-$\frac{[p1]}{[p2p3]} \leq x \lor -\frac{[p1]}{[p2p3]} \geq x$
+$x \in \left[ -\frac{[c]}{[a]} , 0 \right) \cup \left(0,\infty \right) $
 \odpStop
 \testStart
-A.$\frac{[p1]}{[p2p3]} \leq x \lor -\frac{[p1]}{[p2p3]} \geq x$
-B.$\frac{[p1]}{[p2p3]} \geq x \lor -\frac{[p1]}{[p2p3]} \leq x$
-C.$\frac{[p1p3]}{[p2]} \leq x \lor -\frac{[p1p3]}{[p2]} \geq x$
-D.$\frac{[p1p3]}{[p2]} \geq x \lor -\frac{[p1p3]}{[p2]} \leq x$
+A.$x \in \left[ -\frac{[c]}{[a]} , 0 \right) \cup \left(0,\infty \right) $\\
+B.$x \in \left[ -\frac{[c]}{[a]} , 0 \right) $\\
+C. $x \in  \left(0,\infty \right) $\\
+D. $x \in \left[ -\frac{[c]}{[a]} ,\infty \right) $\\
+E. $x \in \mathbb{R}$\\
+F. $x \in \emptyset $\\
 \testStop
 \kluczStart
 A

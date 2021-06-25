@@ -32,27 +32,37 @@
 \maketitle
 
 
-\kategoria{Wikieł/P1.11a}
-\zadStart{Zadanie z Wikieł P 1.11 a) moja wersja nr [nrWersji]}
-%[p1]:[5,6,7,8,9,10,11,12,13,14,15]
-%[x1]:[2]
-%[x2]:[1]
-%[p2]=[p1]+[x2]
-%[p3]=[p1]+[x1]
-%[p2p3]=[p2]*[p3]
-Uprościć ułamek $\frac{[p1]!}{[p2]!}$.
+\kategoria{Wikieł/Z1.25c}
+\zadStart{Zadanie z Wikieł Z 1.25 c) moja wersja nr [nrWersji]}
+%[a]:[2,3,4,5,6,7,8,9]
+%[b]:[1,2,3,4,5,6,7,8,9]
+%[c]:[1,2,3,4,5,6,7,8,9]
+%[cbmm]=-[c]-[b]
+%[cbm]=[c]-[b]
+%math.gcd([cbmm],[a])==1 and math.gcd([cbm],[a])==1 and [cbmm]!=0 and [cbm]!=0
+
+
+Wyznacz dziedzinę funkcji określonej podanym wzorem  $f(x)=\sqrt{|[a]x+[b]|-[c]}$.
 \zadStop
-\rozwStart{Jakub Janik}{}
-$$\frac{[p1]!}{[p2]!}=\frac{1*2*3*\dots*[p1]}{1*2*3*\dots*[p1]*[p3]*[p2]}= $$
-$$\frac{1}{[p3]*[p2]}=\frac{1}{[p2p3]} $$
+\rozwStart{Joanna Świerzbin}{}
+$$f(x)=\sqrt{|[a]x+[b]|-[c]}$$
+$$|[a]x+[b]|-[c] \geq 0$$
+$$|[a]x+[b]| \geq [c]$$
+$$[a]x+[b] \leq -[c] \vee [a]x+[b] \geq [c]$$
+$$[a]x \leq [cbmm] \vee [a]x \geq [cbm]$$
+$$x \leq \frac{[cbmm]}{[a]} \vee x \geq \frac{[cbm]}{[a]}$$
+$$x \in \left( -\infty , \frac{[cbmm]}{[a]} \right] \cup \left[\frac{[cbm]}{[a]}, \infty \right)$$
 \rozwStop
 \odpStart
-$\frac{1}{[p2p3]}$
+$x \in \left( -\infty , \frac{[cbmm]}{[a]} \right] \cup \left[\frac{[cbm]}{[a]}, \infty \right)$
 \odpStop
 \testStart
-A.$\frac{1}{[p2p3]}$
-B.$[p2p3]$
-C.$\frac{[p1]}{[p2]}$
+A.$x \in \left( -\infty , \frac{[cbmm]}{[a]} \right] \cup \left[\frac{[cbm]}{[a]}, \infty \right)$\\
+B.$x \in \left( -\infty , \frac{[cbmm]}{[a]} \right]$ \\
+C. $x \in  \left[\frac{[cbm]}{[a]}, \infty \right)$\\
+D. $x \in \left(\frac{[cbmm]}{[a]} , \frac{[cbm]}{[a]} \right)$\\
+E. $x \in \mathbb{R}$\\
+F. $x \in \emptyset $\\
 \testStop
 \kluczStart
 A

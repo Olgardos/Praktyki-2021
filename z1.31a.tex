@@ -32,34 +32,37 @@
 \maketitle
 
 
-\kategoria{Wikieł/Z1.70h}
-\zadStart{Zadanie z Wikieł Z 1.70h) moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5]
-%[p2]:[2,3,4,5]
-%[p3]:[2,3,4,5]
-%[p13]=[p1]*[p1]*[p1]
-%[p23]=[p2]*[p2]*[p2]
-%[p33]=[p3]*[p3]*[p3]
-%[p2p3]=[p2]*[p3]
-%[p1p3]=[p1]*[p3]
-%[p23p33]=[p23]*[p33]
-%[p13p33]=[p13]*[p33]
-%math.gcd([p1],[p2])==1 and math.gcd([p1],[p3])==1
-Rozwiązać nierówności $\frac{[p13]}{[p23]x^3} \geq [p33]$
+\kategoria{Wikieł/Z1.31a}
+\zadStart{Zadanie z Wikieł Z 1.31 a) moja wersja nr [nrWersji]}
+%[c]:[2,3,4,5,6,7,8,9,10,11,12,15,17]
+%[b]:[2,3,4,5,6,7,8,9,10,11,12,15,17]
+%[a]=random.randint(2,100)
+Wyznaczyć funkcję odwrotną $f^{-1}$ dla funkcji $f$ określonej poniżej. \\
+$f(x)=\frac{1}{[a]}x$
 \zadStop
-\rozwStart{Jakub Janik}{}
-$$\frac{[p13]}{[p23]x^3} \geq [p33] \Leftrightarrow \frac{[p13]}{[p23]} \geq [p33]x^3$$
-$$\frac{[p13]}{[p23]*[p33]} \geq x^3 \Leftrightarrow \frac{[p13]}{[p23p33]} \geq x^3$$
-$$\frac{[p1]}{[p2p3]} \geq x$$
+\rozwStart{Katarzyna Filipowicz}{}
+$$
+y=\frac{1}{[a]}x \quad \backslash \cdot [a]
+$$ $$
+[a]y=x
+$$ $$
+f(x)^{-1}=[a]x
+$$
+Dziedzina: $x \in R$.
 \rozwStop
 \odpStart
-$\frac{[p1]}{[p2p3]} \geq x; x \neq 0$
+$f(x)^{-1}=[a]x$, $x \in R$
 \odpStop
 \testStart
-A.$\frac{[p1]}{[p2p3]} \geq x; x \neq 0$
-B.$\frac{[p1]}{[p2p3]} \leq x; x \neq 0$
-C.$\frac{[p1p3]}{[p2]} \geq x; x \neq 0$
-D.$\frac{[p1p3]}{[p2]} \leq x; x \neq 0$
+A.$f(x)^{-1}=[a]x$, $x \in R$
+B.$0$
+C.$f(x)^{-1}=[a]$
+D.$f(x)^{-1}=x$, $x \in R$
+E.$f(x)^{-1}=[a]x^2$, $x \in N$
+F.$f(x)^{-1}=\frac{1}{[a]}x$, $x \in R$
+G.$f(x)^{-1}=-[a]x$
+H.$f(x)^{-1}=[b]x$, $x \in R$
+I.$f(x)^{-1}=\infty$
 \testStop
 \kluczStart
 A

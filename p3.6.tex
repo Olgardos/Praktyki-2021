@@ -32,27 +32,44 @@
 \maketitle
 
 
-\kategoria{Wikieł/P1.34a}
-\zadStart{Zadanie z Wikieł P 1.34a) moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-%[p2]:[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-%[p12]=[p1]*[p1]
-%[p22]=[p2]*[p2]
-%math.gcd([p1],[p2])==1
-Rozwiązać nierówności $[p12]x^2-[p22]\leq 0$
+\kategoria{Wikieł/p3.6}
+\zadStart{Zadanie z Wikieł P 3.6 moja wersja nr [nrWersji]}
+%[z]:[1,2,3,4,5,6,7,8,9,10,11,12]
+%[y]:[1,2,3,4,5,6,7,8]
+%[r]=random.randint(2,9)
+%[a1]=random.randint([r]+1,50)
+%[n]=random.randint(10,160)
+%[an]=[a1]+([n]-1)*[r]
+%[a2]=[a1]+[r]
+%[a3]=[a2]+[r]
+%[m]=[a1]-[r]
+%[w2]=int((([a1]+[an])*[n])/2)
+%[m]>0
+Wyznaczyć liczbę składników w sumie $[a1]+[a2]+[a3]+...+[an]$ i obliczyć tę sumę.
 \zadStop
-\rozwStart{Jakub Janik}{}
-$$[p12]x^2-[p22]\leq 0 \Leftrightarrow x^2 \leq \frac{[p22]}{[p12]}$$
-$$|x| \leq \frac{[p2]}{[p1]} \Leftrightarrow -\frac{[p2]}{[p1]} \leq x \leq \frac{[p2]}{[p1]}$$
+\rozwStart{Katarzyna Filipowicz}{}
+Zauważmy, że liczby $[a1],[a2],[a3],...$ są kolejnymi wyrazami ciągu arytmetycznego o wyrazie pierwszym $a_1=[a1]$ i różnicy $r=[r]$. Czyli wyraz ogólny wyraża się wzorem
+$$
+a_n=a_1+(n-1)r=[a1]+(n-1)\cdot [r]=[r] n+[m]
+$$
+Skoro $a_n=[r]n+[m]$ oraz $a_n=[an]$, to aby wyznaczyć liczbę składników w sumie, musimy wyznaczyć takie $n \in N$, dla którego $[r] n+[m]=[an]$. Stąd otrzymujemy $n=[n]$. Czyli $a_1=[a1]$, a $a_{[n]}=[an]$, dlatego suma
+$$
+S_{[n]}=\frac{(a_1+a_n)[n]}{2}=\frac{([a1]+[an])[n]}{2}=[w2]
+$$
 \rozwStop
 \odpStart
-$-\frac{[p2]}{[p1]} \leq x \leq \frac{[p2]}{[p1]}$
+Liczba składników w sumie: $[n]$, suma: $[w2]$
 \odpStop
 \testStart
-A.$-\frac{[p2]}{[p1]} \leq x \leq \frac{[p2]}{[p1]}$
-B.$-\frac{[p1]}{[p2]} \leq x \leq \frac{[p1]}{[p2]}$
-C.$-\frac{[p22]}{[p12]} \leq x \leq \frac{[p22]}{[p12]}$
-D.$-\frac{[p12]}{[p22]} \leq x \leq \frac{[p12]}{[p22]}$
+A.Liczba składników w sumie: $[n]$, suma: $[w2]$
+B.Liczba składników w sumie: $-[n]$, suma: $[w2]$
+C.Liczba składników w sumie: $4$, suma: $0$
+D.Liczba składników w sumie: $[n]$, suma: $-[w2]$
+E.Liczba składników w sumie: $[r]$, suma: $[n]$
+F.Liczba składników w sumie: $[n]$, suma: $[n]$
+G.Liczba składników w sumie: $0$, suma: $0$
+H.Liczba składników w sumie: $[an]$, suma: $[an]$
+I.Liczba składników w sumie: $\infty$, suma: $\infty$
 \testStop
 \kluczStart
 A

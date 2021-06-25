@@ -32,34 +32,34 @@
 \maketitle
 
 
-\kategoria{Wikieł/Z1.70i}
-\zadStart{Zadanie z Wikieł Z 1.70i) moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5]
-%[p2]:[2,3,4,5]
-%[p3]:[2,3,4,5]
-%[p13]=[p1]*[p1]*[p1]*[p1]
-%[p23]=[p2]*[p2]*[p2]*[p2]
-%[p33]=[p3]*[p3]*[p3]*[p3]
-%[p2p3]=[p2]*[p3]
-%[p1p3]=[p1]*[p3]
-%[p23p33]=[p23]*[p33]
-%[p13p33]=[p13]*[p33]
-%math.gcd([p1],[p2])==1 and math.gcd([p1],[p3])==1
-Rozwiązać nierówności $\frac{[p13]}{[p23]x^3} \leq [p33]x$
+\kategoria{Wikieł/p3.9}
+\zadStart{Zadanie z Wikieł P 3.9 moja wersja nr [nrWersji]}
+%[z]:[1,2,3,4,5,6,7]
+%[y]:[1,2,3,4,5,6,7,8,9]
+%[a]=random.randint(0,30)
+%[w]=7*[a]
+%[k]=[a]*7
+W ciągu arytmetycznym $(a_n)$ mamy $a_4=[a]$. Oblicz sumę siedmiu początkowych wyrazów tego ciągu.
 \zadStop
-\rozwStart{Jakub Janik}{}
-$$\frac{[p13]}{[p23]x^3} \leq [p33]x \Leftrightarrow \frac{[p13]}{[p23]} \leq [p33]x^4$$
-$$\frac{[p13]}{[p23]*[p33]} \leq x^4 \Leftrightarrow \frac{[p13]}{[p23p33]} \leq x^4$$
-$$\frac{[p1]}{[p2p3]} \leq |x| \Leftrightarrow \frac{[p1]}{[p2p3]} \leq x \lor -\frac{[p1]}{[p2p3]} \geq x$$
+\rozwStart{Katarzyna Filipowicz}{}
+Z warunków zadania mamy $a_4=a_1+3r=[a]$. Wtedy
+$$
+a_1+a_2+a_3+a_4+a_5+a_6+a_7=\frac{7(a_1+a_7)}{2}=\frac{7(a_1+a_1+6r)}{2}=7(a_1+3r)=7 \cdot [a] = [w]
+$$
 \rozwStop
 \odpStart
-$\frac{[p1]}{[p2p3]} \leq x \lor -\frac{[p1]}{[p2p3]} \geq x$
+$[w]$
 \odpStop
 \testStart
-A.$\frac{[p1]}{[p2p3]} \leq x \lor -\frac{[p1]}{[p2p3]} \geq x$
-B.$\frac{[p1]}{[p2p3]} \geq x \lor -\frac{[p1]}{[p2p3]} \leq x$
-C.$\frac{[p1p3]}{[p2]} \leq x \lor -\frac{[p1p3]}{[p2]} \geq x$
-D.$\frac{[p1p3]}{[p2]} \geq x \lor -\frac{[p1p3]}{[p2]} \leq x$
+A.$[w]$
+B.$-[w]$
+C.$0$
+D.$[a]$
+E.$5$
+F.$7$
+G.$-[a]$
+H.$[k]$
+I.$\infty$
 \testStop
 \kluczStart
 A

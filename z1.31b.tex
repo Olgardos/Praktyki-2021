@@ -32,27 +32,46 @@
 \maketitle
 
 
-\kategoria{Wikieł/P1.11a}
-\zadStart{Zadanie z Wikieł P 1.11 a) moja wersja nr [nrWersji]}
-%[p1]:[5,6,7,8,9,10,11,12,13,14,15]
-%[x1]:[2]
-%[x2]:[1]
-%[p2]=[p1]+[x2]
-%[p3]=[p1]+[x1]
-%[p2p3]=[p2]*[p3]
-Uprościć ułamek $\frac{[p1]!}{[p2]!}$.
+\kategoria{Wikieł/Z1.31b}
+\zadStart{Zadanie z Wikieł Z 1.31 b) moja wersja nr [nrWersji]}
+%[c]:[2,3,4,5,6,7,8,9,10,11,12,15,17]
+%[b]:[2,3,4,5,6,7,8,9,10,11,12,15,17]
+%[a]=random.randint(2,100)
+%[m]=random.randint(2,100)
+%math.gcd([a],[m])==1
+Wyznaczyć funkcję odwrotną $f^{-1}$ dla funkcji $f$ określonej poniżej. \\
+$f(x)=[m]x^2-[a]$, $x\geq 0$
 \zadStop
-\rozwStart{Jakub Janik}{}
-$$\frac{[p1]!}{[p2]!}=\frac{1*2*3*\dots*[p1]}{1*2*3*\dots*[p1]*[p3]*[p2]}= $$
-$$\frac{1}{[p3]*[p2]}=\frac{1}{[p2p3]} $$
+\rozwStart{Katarzyna Filipowicz}{}
+$$
+y=[m]x^2-[a] 
+$$ $$
+y+[a]=[m]x^2
+$$ $$
+\frac{y+[a]}{[m]}=x^2
+$$ $$
+x=\sqrt{\frac{y+[a]}{[m]}}
+$$ $$
+f(x)^{-1}=\sqrt{\frac{x+[a]}{[m]}}
+$$ 
+Dziedzina:
+$$
+0\leq \frac{x+[a]}{[m]} \quad \Rightarrow   \quad  x \geq -[a] \quad \Rightarrow \quad x\in [-[a],\infty)
+$$
 \rozwStop
 \odpStart
-$\frac{1}{[p2p3]}$
+$f(x)^{-1}=\sqrt{\frac{x+[a]}{[m]}}$, $x\in [-[a],\infty)$
 \odpStop
 \testStart
-A.$\frac{1}{[p2p3]}$
-B.$[p2p3]$
-C.$\frac{[p1]}{[p2]}$
+A.$f(x)^{-1}=\sqrt{x+[a]}$, $x\in [-[a],\infty)$
+B.$0$
+C.$f(x)^{-1}=\sqrt{x+[a]}$, $x \in R$
+D.$f(x)^{-1}=x$
+E.$f(x)^{-1}=\sqrt{x-[a]}$, $x \in  [[a],\infty)$
+F.$f(x)^{-1}=y+[a]$
+G.$f(x)^{-1}=-[a]x$
+H.$f(x)^{-1}=[b]x$
+I.$f(x)^{-1}=\infty$
 \testStop
 \kluczStart
 A

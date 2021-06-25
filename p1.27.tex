@@ -32,35 +32,47 @@
 \maketitle
 
 
-\kategoria{Wikieł/P1.33}
-\zadStart{Zadanie z Wikieł P 1.33) moja wersja nr [nrWersji]}
-%[p1]:[-2,-3,-4,-5,-6,-7,-8,-9,-10,2,3,4,5,6,7,8,9,10]
-%[p2]:[2,3,4,5,6,7,8,9,10]
-%[p3]:[-2,-3,-4,-5,-6,-7,-8,-9,-10,2,3,4,5,6,7,8,9,10]
-%[w2]:[2]
-%[w4]:[4]
-%[p4]=[p1]*[w2]
-%[del]=[p2]*[p2]-[w4]*[p1]*[p3]
-%[pier]=round(math.sqrt(abs([del])),2)
-%[int]=int([pier])
-%[x1]=round((-[p2]-[pier])/[p4],2)
-%[x2]=round((-[p2]+[pier])/[p4],2)
-%[del]>0
-Rozwiązać równanie $[p1]x^2 + [p2]x +([p3]) = 0$
+\kategoria{Wikieł/p1.27}
+\zadStart{Zadanie z Wikieł P 1.27 moja wersja nr [nrWersji]}
+%[z]:[1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+%[y]:[1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+%[b2]:[4,9,16,25,36,49,64,81,100,121,144,169,196]
+%[a]=random.randint(2,25)
+%[b]=random.randint(1,100)
+%[d]=[b2]/(4*[a])
+%[c]=int([d])
+%[b3]=int(math.sqrt([b2]))
+%[w1]=-[b3]-[b]
+%[w2]=[b3]-[b]
+%[d].is_integer()==True
+Wyznaczyć wartości parametru $m$, dla których trójmian kwadratowy
+$$
+y=-[a]x^2+(m+[b])x-[c]
+$$
+ma jeden pierwiastek.
 \zadStop
-\rozwStart{Jakub Janik}{}
-$$\Delta = [p2]^2 - 4*([p1])*([p3]) = [del] > 0$$
-$$x_1 = \frac{-[p2]-[pier]}{[p4]}=[x1]$$
-$$x_2 = \frac{-[p2]+[pier]}{[p4]}=[x2]$$
+\rozwStart{Katarzyna Filipowicz}{}
+Rozważany trójmian będzie miał dokładnie jeden pierwiastek wtedy i tylko wtedy gdy $\Delta=0$, tj. gdy
+$$
+\Delta=(m+[b])^2-[b2]=0 \quad \Leftrightarrow \quad (m+[b])^2=[b2] \quad \Leftrightarrow \quad |m+[b]|=[b3] 
+\quad \Leftrightarrow \quad
+$$ $$
+\quad \Leftrightarrow \quad m+[b]=-[b3] \lor  m+[b]=[b3] \quad \Leftrightarrow \quad m=[w1] \lor m=[w2]
+$$
 \rozwStop
 \odpStart
-$[x1], [x2]$
+$ m=[w1] \lor m=[w2]$
 \odpStop
 \testStart
-A.$[x1],[x2]$
-B.$[x1]$
-C.$[x2]$
-D.$0$
+A.$ m=[w1] \lor m=[w2]$
+B.$m=[w1]$
+C.$m=0$
+D.$m=-[b]$
+E.$m \in R$
+F.$7$
+G.$m \in R \backslash \{[w1];[w2]\}$
+H.$-5$
+I.$\infty$
 \testStop
 \kluczStart
 A

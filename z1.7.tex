@@ -1,0 +1,64 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Radosław Grzyb}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+\begin{document}
+\maketitle
+\kategoria{Wikieł/Z1.7}
+\zadStart{Zadanie z Wikieł Z 1.7 moja wersja nr [nrWersji]}
+%[p1]:[2,3,5,6,7,10,11]
+%[p2]:[2,3]
+%[wp1]=[p1]+1
+%[wp2]=[p2]+4
+Wykazać, że liczby $a,b,c$ są całkowite i podać ich wartość.
+$$a=\sqrt{[wp1]+2\sqrt{[p1]}}-\sqrt{[wp1]-2\sqrt{[p1]}}$$
+\zadStop
+\rozwStart{Radosław Grzyb}{}
+Do dowodu wykorzystamy wzory skróconego mnożenia, mianowicie:
+$$(a-b)^2=a^2-2ab+b^2$$
+$$(a+b)^2=a^2+2ab+b^2$$
+Wówczas:\\\\
+$a=\sqrt{[wp1]+2\sqrt{[p1]}}-\sqrt{[wp1]-2\sqrt{[p1]}}=\sqrt{[p1]+2\sqrt{[p1]}+1}-\sqrt{[p1]-2\sqrt{[p1]}+1}=\sqrt{\sqrt{[p1]}^2+2\sqrt{[p1]}+1^2}-\sqrt{\sqrt{[p1]}^2-2\sqrt{[p1]}+1^2}=\sqrt{(\sqrt{[p1]}+1)^2}-\sqrt{(\sqrt{[p1]}-1)^2}=\sqrt{[p1]}+1-(\sqrt{[p1]}-1)=\sqrt{[p1]}+1-\sqrt{[p1]}+1=2\in\mathbb{Z}$\\\\
+$b=\sqrt{3+2\sqrt{2}}+\sqrt{6-4\sqrt{2}}=\sqrt{2+2\sqrt{2}+1}+\sqrt{2(3-2\sqrt{2})}=\sqrt{\sqrt{2}^2+2\sqrt{2}+1^2}+\sqrt{2}\sqrt{\sqrt{2}^2-2\sqrt{2}+1^2}=\sqrt{(\sqrt{2}+1)^2}+\sqrt{2}\sqrt{(\sqrt{2}-1)^2}=
+\sqrt{2}+1+\sqrt{2}(\sqrt{2}-1)=\sqrt{2}+1+2-\sqrt{2}=3\in\mathbb{Z}$\\\\
+$c=\sqrt{[wp2]-4\sqrt{[p1]}}+\sqrt{[wp2]+4\sqrt{[p1]}}=\sqrt{[p2]-4\sqrt{[p1]}+4}+\sqrt{[p2]+4\sqrt{[p1]}+4}=\sqrt{\sqrt{[p2]}^2-2\cdot\sqrt{[p1]}\cdot2+2^2}+\sqrt{\sqrt{[p2]}^2+2\cdot\sqrt{[p1]}\cdot2+2^2}=\sqrt{(\sqrt{[p2]}-2)^2}+\sqrt{(\sqrt{[p2]}+2)^2}=\sqrt{(2-\sqrt{[p2]})^2}+\sqrt{(\sqrt{[p2]}+2)^2}=2-\sqrt{[p2]}+\sqrt{[p2]}+2=2+2=4\in\mathbb{Z}$
+\rozwStop
+\odpStart
+$a=2,b=3,c=4$
+\odpStop
+\testStart
+A.$a=2,b=3,c=4$
+B.$a=-2,b=3,c=4$
+C.$a=1,b=2,c=3$
+D.$a=0,b=0,c=3$
+E.$a=4,b=2,c=3$
+F.$a=21,b=3,c=7$
+\testStop
+\kluczStart
+A
+\kluczStop
+\end{document}

@@ -1,0 +1,62 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Radosław Grzyb}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+\begin{document}
+\maketitle
+\kategoria{Wikieł/P1.1}
+\zadStart{Zadanie z Wikieł P 1.1 moja wersja nr [nrWersji]}
+%[p1]:[1,2,3,4,5,6,7,8]
+%[gcd]=math.gcd([p1],9)
+%[w1]=int([p1]/[gcd])
+%[w2]=int(9/[gcd])
+Zamienić ułamek dziesiętny okresowy $0,([p1])$ na ułamek zwykły. 
+\zadStop
+\rozwStart{Radosław Grzyb}{}
+Oznaczamy $$x=0,([p1])=0,[p1][p1][p1]...$$\\
+Wówczas:
+$$10x=[p1],[p1][p1][p1]...$$
+$$10x=[p1],([p1])$$
+$$10x=[p1]+0,([p1])$$
+$$10x=[p1]+x$$
+$$9x=[p1]\implies x=\frac{[w1]}{[w2]}$$
+\rozwStop
+\odpStart
+$\frac{[w1]}{[w2]}$
+\odpStop
+\testStart
+A.$\frac{[w1]}{[w2]}$
+B.$0$
+C.$\infty$
+D.$\frac{[w1]}{17}$
+E.$-\frac{1}{[p1]}$
+F.$1$
+\testStop
+\kluczStart
+A
+\kluczStop
+\end{document}

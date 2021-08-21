@@ -1,0 +1,58 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Radosław Grzyb}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+\begin{document}
+\maketitle
+\kategoria{Wikieł/Z1.86f}
+\zadStart{Zadanie z Wikieł Z 1.86f moja wersja nr [nrWersji]}
+%[p1]:[2,3,4,6,7,8,9,10,11,12,13]
+Rozwiązać nierówność:
+$$2^{[p1]x+1}-2^{[p1]x-1}\leq3^{2-[p1]x}$$
+\zadStop
+\rozwStart{Radosław Grzyb}{}
+$$2^{[p1]x}\cdot2-2^{[p1]x}\cdot\frac{1}{2}\leq3^{2-[p1]x}$$
+$$2^{[p1]x}\cdot\frac{3}{2}\leq3^{2-[p1]x}$$
+$$2^{[p1]x}\cdot\frac{3}{2}\leq\left(\frac{1}{3}\right)^{[p1]x}\cdot9$$
+Dzieląc obie strony równania przez $\left(\frac{1}{3}\right)^{[p1]x}$ oraz $\frac{3}{2}$ otrzymujemy:
+$$6^{[p1]x}\leq6^{1}$$
+Logarytmując obie strony równania otrzymujemy:
+$$[p1]x\geq1 \implies x\geq\frac{1}{[p1]}$$
+\rozwStop
+\odpStart
+$x\geq\frac{1}{[p1]}$
+\odpStop
+\testStart
+A.$x\leq\frac{1}{[p1]}$
+B.$x\geq\frac{1}{[p1]}$
+C.$x \leq [p1]$
+D.$x \geq [p1]$
+\testStop
+\kluczStart
+B
+\kluczStop
+\end{document}

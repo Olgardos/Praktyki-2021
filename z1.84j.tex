@@ -1,0 +1,73 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Radosław Grzyb}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+\begin{document}
+\maketitle
+\kategoria{Wikieł/Z1.84j}
+\zadStart{Zadanie z Wikieł Z 1.84j moja wersja nr [nrWersji]}
+%[p1]:[2,3,5]
+%[p2]:[2,3,4,6,7,8,9,10,11]
+%[p3]:[2,3,4,6,7,8,9,10,11]
+%[delta]=[p2]**2-4*[p3]*(-7)
+%[deltaf]=math.sqrt([delta])
+%[deltap]=int([deltaf])
+%[c1]=[p1]**4
+%[x1]=([p2]-[deltap])/(2*[p3])
+%[x2]=([p2]+[deltap])/(2*[p3])
+%[x11]=10*[x1]
+%[x111]=100*[x1]
+%[x22]=10*[x2]
+%[x222]=100*[x2]
+%[delta]>0 and ([deltaf]).is_integer() is True and (([x11]).is_integer() is True or ([x111]).is_integer() is True) and (([x22]).is_integer() is True or ([x222]).is_integer() is True)
+Rozwiązać równanie:
+$$[p1]^{[p3]x^{2}-[p2]x-\frac{5}{2}}=[c1]\sqrt{[p1]}$$
+\zadStop
+\rozwStart{Radosław Grzyb}{}
+$$[p1]^{[p3]x^{2}-[p2]x-\frac{5}{2}}=[p1]^{4}\cdot[p1]^{\frac{1}{2}}$$
+$$[p1]^{[p3]x^{2}-[p2]x-\frac{5}{2}}=[p1]^{\frac{9}{2}}$$
+Logarytmując obie strony równania otrzymujemy:
+$$[p3]x^{2}-[p2]x-\frac{5}{2}=\frac{9}{2}$$
+$$[p3]x^{2}-[p2]x-7=0$$
+Otrzymaliśmy równanie kwadratowe. Czas policzyć deltę i znaleźć miejsca zerowe:
+$$\Delta=(-[p2])^{2}-4\cdot[p3]\cdot(-7)=[delta]\implies \sqrt{\Delta}=[deltap]$$\\
+$$x_{1}=\frac{[p2]-[deltap]}{2\cdot[p3]}=[x1]$$\\\\
+$$x_{2}=\frac{[p2]+[deltap]}{2\cdot[p3]}=[x2]$$
+\rozwStop
+\odpStart
+$[x1] \vee [x2]$
+\odpStop
+\testStart
+A.$0.12 \vee 10$
+B.$[x1] \vee [x2]$
+C.$-5 \vee 0.94$
+D.$11.5 \vee 50.0$
+\testStop
+\kluczStart
+B
+\kluczStop
+\end{document}

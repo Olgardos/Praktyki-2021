@@ -28,65 +28,52 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84r}
-\zadStart{Zadanie z Wikieł Z 1.84 r moja wersja nr [nrWersji]}
-%[p2]:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-%[p3]:[1,2,3]
-%[p4]:[1,2,3,4,5]
-%[c1]=4**[p3]
-%[c2]=2**[p4]
-%[l1]=1-[c1]
-%[g1]=[c2]*[l1]
-%[g2]=[p2]*[c1]*[c2]
-%[Delta]=int(math.pow([c1],2)-4*[g1]*[g2])
-%[tDelta]=math.sqrt([Delta])
-%[sDelta]=int([tDelta])
-%[t1]=(-[c1]-[sDelta])/(2*[g1])
-%[t2]=(-[c1]+[sDelta])/(2*[g1])
-%[f1]=int(-[c1]-[sDelta])
-%[f2]=int(-[c1]+[sDelta])
-%[f11]=2*[g1]
-%[gcd1]=math.gcd([f1],[f11])
-%[gcd2]=math.gcd([f2],[f11])
-%[wg1]=-int([f1]/[gcd1])
-%[wg2]=int([f2]/[gcd2])
-%[wgf1]=-int([f11]/[gcd1])
-%[wgf2]=int([f11]/[gcd2])
-%[Delta]>0 and ([tDelta]).is_integer() is True and ([t1]>0 or [t2]>0) and [wgf1]>1
-Rozwiązać równanie:
-$$4^{x-1}+0.5^{1-x}=0.25^{-x}-[p2]$$
+\kategoria{Wikieł/Z1.82a}
+\zadStart{Zadanie z Wikieł Z 1.82a moja wersja nr [nrWersji]}
+%[p1]:[2,3,4,5,6,7,8]
+%[p2]:[2,3,4,5]
+%[p3]:[2,4,5,8,10]
+%[C]=1/[p3]
+%[vycl]=[p1]**2-[p2]
+%[w1]=[p3]**(-[p2])
+%[w2]=[p3]**[vycl]
+%[v222]=1000*[w1]
+%[w2]<1000 and ([v222]).is_integer() is True
+Znaleźć współrzędne puntków, w których przecinają się wykresy funkcji.
+$$y=[p3]^{x^{2}-[p2]}$$ oraz $$y=[C]^{[p1]x+[p2]}$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$4^{x-[p3]}+2^{x-[p4]}=4^{x}-[p2]$$
-$$4^{x}:4^{[p3]}+2^{x}:2^{[p4]}=4^{x}-[p2]$$
-$$4^{x}\cdot(\frac{1}{4})^{[p3]}+2^{x}\cdot(\frac{1}{2})^{[p4]}=4^{x}-[p2]$$
-$$4^{x}\cdot\frac{1}{[c1]}+2^{x}\cdot\frac{1}{[c2]}-4^{x}+[p2]=0$$
-$$\frac{[l1]}{[c1]}\cdot4^{x}+2^{x}\cdot\frac{1}{[c2]}+[p2]=0$$
-$$\frac{[l1]}{[c1]}\cdot2^{2x}+\frac{1}{[c2]}\cdot2^{x}+[p2]=0 //\cdot[c1]$$
-$$[l1]\cdot2^{2x}+\frac{[c1]}{[c2]}\cdot2^{x}+[c1]\cdot[p2]=0 //\cdot[c2]$$
-$$[g1]\cdot2^{2x}+[c1]\cdot2^{x}+[g2]=0$$
-Zauważamy, że nasze równanie wykładnicze da się rozwiązać deltą podstawiając $t=2^{x}$:
-$$[g1]\cdot t^{2}+[c1]\cdot t+[g2]=0$$
-Czas policzyć deltę:
-$$\Delta_{t}=[c1]^{2}-4\cdot[g1]\cdot[g2]=[Delta]$$
-$$\sqrt{\Delta_{t}}=[sDelta]$$
-Czas znaleźć miejsca zerowe:
-$$t_{1}=\frac{-[c1]-[sDelta]}{2\cdot[g1]}=\frac{[f1]}{[f11]}=\frac{[wg1]}{[wgf1]}$$
-$$t_{2}=\frac{-[c1]+[sDelta]}{2\cdot[g1]}=\frac{[f2]}{[f11]}=\frac{[wg2]}{[wgf2]}$$
-Z racji tego, że $2^{x}$ musi być dodatnie odrzucamy drugi wynik, czyli $t_{2}$.\\
-A więc:
-$$t_{1}=2^{x}=\frac{[wg1]}{[wgf1]}\implies x=\frac{\log\frac{[wg1]}{[wgf1]}}{\log2}$$
+Oznaczamy:
+$$[p3]^{x^{2}-[p2]}=[C]^{[p1]x+[p2]}$$
+$$[p3]^{x^{2}-[p2]}=(\frac{1}{[p3]})^{[p1]x+[p2]}$$
+$$[p3]^{x^{2}-[p2]}=[p3]^{-[p1]x-[p2]}$$
+Logarytmując obie strony równania otrzymujemy:\\
+$$x^{2}-[p2]=-[p1]x-[p2]$$
+$$x^{2}+[p1]x=0$$
+$$x(x+[p1])=0\implies x=0 \lor x=-[p1]$$
+Znaleźlismy współrzędne x naszego równania kwadratowego. Wykorzystamy je do znalezienia współrzędnych y i tym samym otrzymamy punkty przecięcia funkcji.\\\\
+Dla $x_{1}=0$ mamy:\\\\
+$[p3]^{0^{2}-[p2]}=[w1]=y_{1}$\\\\
+Zaś dla $x_{2}=-[p1]$:\\\\
+$[p3]^{(-[p1])^{2}-[p2]}=[w2]=y_{2}$\\\\
+Mając obie współrzędne naszych punktów, możemy je zapisać:\\\\
+$$p_{1}=(0,[w1])$$
+$$p_{2}=(-[p1],[w2])$$
 \rozwStop
 \odpStart
-$$x=\frac{\log\frac{[wg1]}{[wgf1]}}{\log2}$$
+$$p_{1}=(0,[w1])$$
+$$p_{2}=(-[p1],[w2])$$
 \odpStop
 \testStart
-A. $$x=\frac{\log\frac{[wg1]}{[wgf1]}}{\log4}$$
-B. $$x=\frac{[wg1]}{[wgf1]}$$
-C. $$x=[wg1]^{[wgf1]}$$
-D. $$x=\frac{\log\frac{[wg1]}{[wgf1]}}{\log2}$$
+A.$$(-[p1],[w2])$$
+B.$$p_{1}=(1,[w1])$$
+$$p_{2}=(-[p1],[w2])$$
+C.$$2$$
+D.$$(0,[w1])$$
+E.$$p_{1}=(0,[w1])$$
+$$p_{2}=(-[p1],[w2])$$ 
 \testStop
 \kluczStart
-D
+E
 \kluczStop
 \end{document}

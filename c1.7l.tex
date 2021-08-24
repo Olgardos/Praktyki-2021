@@ -1,0 +1,107 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Radosław Grzyb}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+\begin{document}
+\maketitle
+\kategoria{Beger/c1.7l}
+\zadStart{Zadanie z Beger C 1.7l moja wersja nr [nrWersji]}
+%[p1]:[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+%[p2]:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+%[p3]:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+%[Delta]=[p2]**2-4*[p1]*[p3]
+%[tDelta]=[Delta]**(1/2)
+%[sDelta]=int([Delta]**(1/2))
+%[x1]=(-[p2]+[sDelta])/(2*[p1])
+%[x2]=(-[p2]-[sDelta])/(2*[p1])
+%[x11]=int([x1])
+%[x22]=int([x2])
+%[px11]=-int([x1])
+%[px22]=-int([x2])
+%[2x4]=[px22]*4
+%[2x5]=-2-[2x4]
+%[2x6]=-[px22]+[px11]
+%[gcd1]=math.gcd([2x5],[2x6])
+%[1gcd1]=-int([2x5]/[gcd1])
+%[2gcd1]=-int([2x6]/[gcd1])
+%[3gcd1]=3*[1gcd1]
+%[4gcd1]=[p1]*[2gcd1]
+%[Dgcd1]=math.gcd([3gcd1],[4gcd1])
+%[Fgcd1]=math.gcd([1gcd1],[4gcd1])
+%[a1]=int([3gcd1]/[Dgcd1])
+%[a2]=int([4gcd1]/[Dgcd1])
+%[a3]=int([4gcd1]/[Fgcd1])
+%[a4]=int([1gcd1]/[Fgcd1])
+%[Delta]>0 and ([x1]).is_integer() is True and ([x2]).is_integer() is True and ([tDelta]).is_integer() is True and [x1]<0 and [x2]<0 and ([2x5]/[2x6]).is_integer() is False and ([3gcd1]/[2gcd1]).is_integer() is False
+Obliczyć całkę ułamków prostych:
+$$\int \frac{4x-2}{[p1]x^2+[p2]x+[p3]} \,dx$$
+\zadStop
+\rozwStart{Radosław Grzyb}{}
+Policzmy najpierw deltę naszej funkcji kwadratowej z mianownika:
+$$\Delta=[p2]^2-4\cdot[p1]\cdot[p3]=[Delta]\implies\sqrt{[Delta]}=[sDelta]$$
+Znajdźmy miejsca zerowe:
+$$x_{1}=\frac{-[p2]+[sDelta]}{2\cdot[p1]}=[x11]$$
+$$x_{2}=\frac{-[p2]-[sDelta]}{2\cdot[p1]}=[x22]$$
+Zatem naszą całkę możemy zanpisać jako:
+$$\frac{1}{[p1]}\int \frac{4x-2}{(x+[px11])(x+[px22])} \,dx$$
+Zacznijmy powoli rozkładać naszą całkę na ułamki proste:
+$$\frac{1}{[p1]}\int \frac{4x-2}{(x+[px11])(x+[px22])} \,dx=\frac{1}{[p1]}\int \frac{A}{x+[px11]}+\frac{B}{x+[px22]} \,dx$$
+Przyrównując do siebie funkcje podcałkowe otrzymujemy:
+$$\frac{4x-2}{(x+[px11])(x+[px22])}=\frac{A}{x+[px11]}+\frac{B}{x+[px22]}$$
+Pomnóżmy obie strony równania przez $(x+[px11])(x+[px22])$:
+$$4x-2=A(x+[px22])+B(x+[px11])$$
+$$4x-2=Ax+[px22]A+Bx+[px11]B$$
+Przyrównując do siebie odpowiednie współczynniki otrzymujemy do rozwiązania prosty układ równań:
+$$\begin{cases} 4=A+B \implies A=4-B  \\ -2=[px22]A+[px11]B \end{cases}$$
+Rozwiążmy go metodą przez podstawianie:
+$$-2=[px22](4-B)+[px11]B$$
+$$-2=[2x4]-[px22]B+[px11]B$$
+$$[2x5]=-[px22]B+[px11]B$$
+$$[2x5]=[2x6]B\implies B=\frac{[1gcd1]}{[2gcd1]}$$
+$$A=4-\frac{[1gcd1]}{[2gcd1]}=\frac{4\cdot[1gcd1]}{[2gcd1]}-\frac{[1gcd1]}{[2gcd1]}=\frac{[3gcd1]}{[2gcd1]}$$
+Otrzymujemy więc:
+$$\frac{1}{[p1]}\int \frac{\frac{[3gcd1]}{[2gcd1]}}{x+[px11]}+\frac{\frac{[1gcd1]}{[2gcd1]}}{x+[px22]} \,dx$$
+$$\frac{1}{[p1]}\cdot\frac{[3gcd1]}{[2gcd1]}\int \frac{1}{x+[px11]} \,dx+\frac{1}{[p1]}\cdot\frac{[1gcd1]}{[2gcd1]}\int \frac{1}{x+[px22]} \,dx$$
+$$\frac{[a1]}{[a2]}\int \frac{1}{x+[px11]} \,dx+\frac{[a4]}{[a3]}\int \frac{1}{x+[px22]} \,dx$$
+Powyższe całki możemy obliczyć metodą przez podstawienie: $t=x+[px11]$, a więc $dx=dt$ oraz $k=x+[px22]$, a więc $dx=dk$.
+$$\frac{[a1]}{[a2]}\int \frac{1}{t} \,dt+\frac{[a4]}{[a3]}\int \frac{1}{k} \,dk$$
+Podstawiając do gotowego wzoru na całkę $\int \frac{1}{x} \,dx=ln|x|+C$ otrzymujemy finalny wynik:
+$$\frac{[a1]}{[a2]}ln|t|+\frac{[a4]}{[a3]}ln|k|+C=\frac{[a1]}{[a2]}ln|x+[px11]|+\frac{[a4]}{[a3]}ln|x+[px22]|+C$$
+\rozwStop
+\odpStart
+$$\frac{[a1]}{[a2]}ln|x+[px11]|+\frac{[a4]}{[a3]}ln|x+[px22]|+C$$
+\odpStop
+\testStart
+A.$$\frac{[a1]}{[a2]}arcsin([px22])+C$$
+B.$$\frac{[a1]}{[a2]}ln|x+[px11]|+C$$
+C.$$\frac{[a1]}{[a2]}ln|x^2+[px11]|+\frac{[a4]}{[a3]}ln|x^2+[px22]|+C$$
+D.$$\frac{[a1]}{[a2]}ln|x+[px11]|+\frac{[a4]}{[a3]}ln|x+[px22]|+C$$
+\testStop
+\kluczStart
+D
+\kluczStop
+\end{document}

@@ -32,27 +32,32 @@
 \maketitle
 
 
-\kategoria{Wikieł/P1.34a}
-\zadStart{Zadanie z Wikieł P 1.34a) moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-%[p2]:[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-%[p12]=[p1]*[p1]
-%[p22]=[p2]*[p2]
-%math.gcd([p1],[p2])==1
-Rozwiązać nierówności $[p12]x^2-[p22]\leq 0$
+\kategoria{Wikieł/Z4.21v}
+\zadStart{Zadanie z Wikieł Z 4.21v) moja wersja nr [nrWersji]}
+%[p1]:[2,3,4,5,6,7,8,9,10]
+%[p2]:[2,3,4,5,6,7,8,9,10]
+%[p3]:[2,3,4,5,6,7,8,9,10]
+%[p32]=[p3]*[p3]
+%[p4]=2*[p1]*[p3]
+%[g]=math.gcd([p4],[p2])
+%[up]=int([p4]/[g])
+%[down]=int([p2]/[g])
+%[down]!=1
+Obliczyć granicę funkcji $\lim_{x \to 0} \frac{x\sin{[p1]x}}{\sqrt{[p2]x^2+[p32]}-[p3]}$
 \zadStop
-\rozwStart{Jakub Janik}{Martyna Czarnobaj}
-$$[p12]x^2-[p22]\leq 0 \Leftrightarrow x^2 \leq \frac{[p22]}{[p12]}$$
-$$|x| \leq \frac{[p2]}{[p1]} \Leftrightarrow -\frac{[p2]}{[p1]} \leq x \leq \frac{[p2]}{[p1]}$$
-\rozwStop
+\rozwStart{Jakub Janik}{}
+$$\lim_{x \to 0} \frac{x\sin{[p1]x}}{\sqrt{[p2]x^2+[p32]}-[p3]}=$$
+$$=\lim_{x \to 0} \frac{x\sin{[p1]x}(\sqrt{[p2]x^2+[p32]}+[p3])}{(\sqrt{[p2]x^2+[p32]}-[p3])(\sqrt{[p2]x^2+[p32]}+[p3])}=$$
+$$=\lim_{x \to 0} \frac{x\sin{[p1]x}(\sqrt{[p2]x^2+[p32]}+[p3])}{[p2]x^2}=$$
+$$=\lim_{x \to 0} \frac{\sin{[p1]x}}{[p1]x}\cdot\frac{[p1](\sqrt{[p2]x^2+[p32]}+[p3])}{[p2]}=\frac{[up]}{[down]}$$
 \odpStart
-$-\frac{[p2]}{[p1]} \leq x \leq \frac{[p2]}{[p1]}$
+$\frac{[up]}{[down]}$
 \odpStop
 \testStart
-A.$-\frac{[p2]}{[p1]} \leq x \leq \frac{[p2]}{[p1]}$
-B.$-\frac{[p1]}{[p2]} \leq x \leq \frac{[p1]}{[p2]}$
-C.$-\frac{[p22]}{[p12]} \leq x \leq \frac{[p22]}{[p12]}$
-D.$-\frac{[p12]}{[p22]} \leq x \leq \frac{[p12]}{[p22]}$
+A.$\frac{[up]}{[down]}$
+B.$0$
+C.$-\frac{[up]}{[down]}$
+D.$\infty$
 \testStop
 \kluczStart
 A

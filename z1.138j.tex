@@ -49,25 +49,25 @@
 %[ab]=[a]*[b]
 %[gcd]!=0 and [mianownik2]!=0 and [mianownik2]!=1 and [mianownik3]!=0 and [mianownik3]!=1
 Wyznaczyć funckję odwrotną do danej funkcji $f$ określonej na zbiorze $\mathcal{D}_{f}$.\\
-j) $f(x)=\frac{\pi}{[a]}-[b]arcsin([c]x)\hspace{5mm}\mathcal{D}_{f}=[-\frac{1}{[c]},\frac{1}{[c]}]$
+j) $f(x)=\frac{\pi}{[a]}-[b]arcsin([c]x)\hspace{5mm}\mathcal{D}_{f}=\left[-\frac{1}{[c]},\frac{1}{[c]}\right]$
 \zadStop
-\rozwStart{Wojciech Przybylski}{}
-$$f(x)=\frac{\pi}{[a]}-[b]arcsin([c]x)\hspace{5mm} \mathcal{D}_{f}=[-\frac{1}{[c]},\frac{1}{[c]}]$$
+\rozwStart{Wojciech Przybylski}{Maja Szabłowska}
+$$f(x)=\frac{\pi}{[a]}-[b]arcsin([c]x)\hspace{5mm} \mathcal{D}_{f}=\left[-\frac{1}{[c]},\frac{1}{[c]}\right]$$
 $$f(-\frac{1}{[c]})=\frac{\pi}{[a]}+[b]\cdot\frac{\pi}{2}=\frac{[licznik2]\pi}{[mianownik2]}, f(\frac{1}{[c]})=\frac{\pi}{[a]}-[b]\cdot\frac{\pi}{2}=\frac{-[licznik4]\pi}{[mianownik3]}$$
-$$f(\mathcal{D}_{f})=[-\frac{[licznik4]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}]$$
-$$y=\frac{\pi}{[a]}-[b]arcsin([c]x)\Rightarrow \frac{\pi}{[a]}-y=[b]arcsin([c]x) \Rightarrow x=\frac{sin(\frac{\frac{\pi}{[a]}-y}{[b]})}{[c]}$$
-$$y=f^{-1}(x)=\frac{sin(\frac{\pi-[a]x}{[ab]})}{[c]} \mbox{ dla } x\in [-\frac{[licznik4]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}]$$
+$$f(\mathcal{D}_{f})=\left[-\frac{[licznik4]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}\right]$$
+$$y=\frac{\pi}{[a]}-[b]arcsin([c]x)\Rightarrow \frac{\pi}{[a]}-y=[b]arcsin([c]x) \Rightarrow x=\frac{sin\left(\frac{\frac{\pi}{[a]}-y}{[b]}\right)}{[c]}$$
+$$y=f^{-1}(x)=\frac{sin\left(\frac{\pi-[a]x}{[ab]}\right)}{[c]} \mbox{ dla } x\in \left[-\frac{[licznik4]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}\right]$$
 \rozwStop
 \odpStart
-$f^{-1}(x)=\frac{sin(\frac{\pi-[a]x}{[ab]})}{[c]} \mbox{ dla } x\in [-\frac{[licznik4]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}]$
+$f^{-1}(x)=\frac{sin\left(\frac{\pi-[a]x}{[ab]}\right)}{[c]} \mbox{ dla } x\in \left[-\frac{[licznik4]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}\right]$
 \odpStop
 \testStart
-A. $f^{-1}(x)=\frac{sin(\frac{\pi-[a]x}{[ab]})}{[c]} \mbox{ dla } x\in [-\frac{[licznik4]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}]$\\
-B. $f^{-1}(x)=\frac{arcsin(\frac{\pi-[a]x}{[ab]})}{[c]} \mbox{ dla } x\in [-\frac{[a]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}]$\\
-C. $f^{-1}(x)=\frac{sin(\frac{\pi-[a]x}{[b]})}{[c]} \mbox{ dla } x\in [-\frac{[b]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}]$\\
-D. $f^{-1}(x)=\frac{cos(\frac{\pi-[a]x}{[ab]})}{[c]} \mbox{ dla } x\in [-\frac{[licznik4]}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}]$\\
-E. $f^{-1}(x)=\frac{sin(\frac{\pi+[a]x}{[ab]})}{[c]} \mbox{ dla } x\in \mathbb{R}$\\
-F. $f^{-1}(x)=sin(\frac{\pi+[a]x}{[ab]}) \mbox{ dla } x\in [-\frac{[licznik4]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}]$
+A. $f^{-1}(x)=\frac{sin\left(\frac{\pi-[a]x}{[ab]}\right)}{[c]} \mbox{ dla } x\in \left[-\frac{[licznik4]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}\right]$\\
+B. $f^{-1}(x)=\frac{arcsin\left(\frac{\pi-[a]x}{[ab]}\right)}{[c]} \mbox{ dla } x\in \left[-\frac{[a]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}\right]$\\
+C. $f^{-1}(x)=\frac{sin\left(\frac{\pi-[a]x}{[b]}\right)}{[c]} \mbox{ dla } x\in \left[-\frac{[b]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}\right]$\\
+D. $f^{-1}(x)=\frac{cos\left(\frac{\pi-[a]x}{[ab]}\right)}{[c]} \mbox{ dla } x\in \left[-\frac{[licznik4]}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}\right]$\\
+E. $f^{-1}(x)=\frac{sin\left(\frac{\pi+[a]x}{[ab]}\right)}{[c]} \mbox{ dla } x\in \mathbb{R}$\\
+F. $f^{-1}(x)=sin\left(\frac{\pi+[a]x}{[ab]}\right) \mbox{ dla } x\in \left[-\frac{[licznik4]\pi}{[mianownik3]},\frac{[licznik2]\pi}{[mianownik2]}\right]$
 \testStop
 \kluczStart
 A

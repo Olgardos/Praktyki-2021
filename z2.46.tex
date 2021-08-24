@@ -45,19 +45,19 @@
 %[wx]=[p2]*[b]
 %[wym]=[p1]-[p3]
 %[wy]=[b]*[p1]
-%[mx]=round(-[wx]/([wxm]+0.00001),2)
+%[mx]=round([wx]/([wxm]+0.00001),2)
 %[my]=round(-[wy]/([wym]+0.00001),2)
-%([p1]*[p4]+[p3]*[p2])>0 and [p3]>[p1] and ([p4]+[p2])!=0 and (([p1]-[p3])!=0) and (([p1]-[p3])!=-1) and (([p1]-[p3])!=1)
+%([p1]*[p4]+[p3]*[p2])>0 and [p3]>[p1] and ([p4]+[p2])!=0 and (([p1]-[p3])!=0) and (([p1]-[p3])!=-1) and (([p1]-[p3])!=1) and [mx]<[my]
 Podać, dla jakich wartości parametru $m$ rozwiązaniem układu równań:
 $$
  \left\{ \begin{array}{ll}
-[p1]\cdot x-[p2]\cdot y=m & \\
-{[p3]}\cdot x+[p4]\cdot y=m+[b]  & 
+[p1] x-[p2] y=m & \\
+{[p3]} x+[p4] y=m+[b]  & 
 \end{array} \right.
 $$
 jest para liczb dodatnich.
 \zadStop
-\rozwStart{Wojciech Przybylski}{}
+\rozwStart{Wojciech Przybylski}{Maja Szabłowska}
 $$
 W =
 \left| \begin{array}{ccc}
@@ -88,7 +88,7 @@ $$\frac{[wxm]}{[w]}m+\frac{-[wx]}{[w]}>0$$
 $$m>\frac{[wx]}{[wxm]}=[mx]$$
 II $y>0$
 $$\frac{[wym]}{[w]}m+\frac{[wy]}{[w]}>0$$
-$$m<\frac{[wy]}{[wym]}=[my]$$
+$$m<\frac{-[wy]}{[wym]}=[my]$$
 $$m\in([mx],[my])$$
 \rozwStop
 \odpStart
@@ -96,8 +96,8 @@ $m\in([mx],[my])$
 \odpStop
 \testStart
 A. $m\in([mx],[my])$\\
-B. $m\in([p1],[my])$\\
-C. $m\in(-\infty,[p2])$\\
+B. $m\in([my],\infty)$\\
+C. $m\in(-\infty,[p2].0)$\\
 D. $m\in([mx],\infty)$\\
 E. nie ma takiego m 
 \testStop

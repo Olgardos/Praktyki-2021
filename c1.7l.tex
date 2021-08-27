@@ -48,7 +48,7 @@
 %[gcd1]=math.gcd([2x5],[2x6])
 %[1gcd1]=-int([2x5]/[gcd1])
 %[2gcd1]=-int([2x6]/[gcd1])
-%[3gcd1]=3*[1gcd1]
+%[3gcd1]=4*[2gcd1]-[1gcd1]
 %[4gcd1]=[p1]*[2gcd1]
 %[Dgcd1]=math.gcd([3gcd1],[4gcd1])
 %[Fgcd1]=math.gcd([1gcd1],[4gcd1])
@@ -82,7 +82,7 @@ $$-2=[px22](4-B)+[px11]B$$
 $$-2=[2x4]-[px22]B+[px11]B$$
 $$[2x5]=-[px22]B+[px11]B$$
 $$[2x5]=[2x6]B\implies B=\frac{[1gcd1]}{[2gcd1]}$$
-$$A=4-\frac{[1gcd1]}{[2gcd1]}=\frac{4\cdot[1gcd1]}{[2gcd1]}-\frac{[1gcd1]}{[2gcd1]}=\frac{[3gcd1]}{[2gcd1]}$$
+$$A=4-\frac{[1gcd1]}{[2gcd1]}=\frac{4\cdot[2gcd1]}{[2gcd1]}-\frac{[1gcd1]}{[2gcd1]}=\frac{[3gcd1]}{[2gcd1]}$$
 Otrzymujemy więc:
 $$\frac{1}{[p1]}\int \frac{\frac{[3gcd1]}{[2gcd1]}}{x+[px11]}+\frac{\frac{[1gcd1]}{[2gcd1]}}{x+[px22]} \,dx$$
 $$\frac{1}{[p1]}\cdot\frac{[3gcd1]}{[2gcd1]}\int \frac{1}{x+[px11]} \,dx+\frac{1}{[p1]}\cdot\frac{[1gcd1]}{[2gcd1]}\int \frac{1}{x+[px22]} \,dx$$

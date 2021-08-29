@@ -1,0 +1,69 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Robert Fidytek}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+
+\begin{document}
+\maketitle
+
+\kategoria{Wikieł/Z5.26h}
+
+\zadStart{Zadanie z Wikieł Z 5.26 h) moja wersja nr [nrWersji]}
+%[a]:[4,6,8,10,12,14,16,18,20,22]
+%[b]=int([a]/2)
+Wyznaczyć wartość największą oraz wartość najmniejszą funkcji w przedziale. 
+$$y = [a]x^2 \ln x, \quad \langle e^{-1},e\rangle$$
+\zadStop
+
+\rozwStart{Natalia Danieluk}{}
+Funkcja $f$ jest ciągła w przedziale $\langle e^{-1},e \rangle (\approx \langle 0,37;2,72 \rangle)$. Wartość największą $M$ i najmniejszą $m$ znajdziemy więc wśród ekstremów tej funkcji w przedziale $\langle e^{-1},e \rangle$ oraz na końcach przedziału, tj. $f(e^{-1})$ i $f(e)$. \\
+A zatem obliczamy pochodną i wyznaczamy jej miejsca zerowe:
+$$ f'(x) = [a](2x \ln x + \frac{1}{x} \cdot x^2) = [a](2x \ln x + x)= [a]x(2 \ln x + 1) $$
+$$ f'(x) = 0 \Leftrightarrow [a]x = 0 \quad\vee\quad 2 \ln x + 1 = 0 \Leftrightarrow $$
+$$ \Leftrightarrow x = 0 \notin \mathcal{D}_f\quad\vee\quad \ln x = - \frac{1}{2} \Leftrightarrow x = \frac{1}{\sqrt{e}} $$ 
+Punkt $\frac{1}{\sqrt{e}} (\approx 0,61)$ należy do przedziału. Sprawdzamy wartości funkcji w tym punkcie oraz na końcach naszego przedziału: \\
+$$ f\Big(\frac{1}{\sqrt{e}}\Big) = [a]\cdot\frac{1}{e}\cdot\Big(-\frac{1}{2}\Big)=-\frac{[b]}{e}, $$
+$$ f(e^{-1}) = [a]e^{-2}\cdot(-1)=-\frac{[a]}{e^2},\quad f(e) = [a]e^2 \cdot 1 = [a]e^2 $$
+\rozwStop
+
+\odpStart
+Wartość największa $M$ funkcji $f$ w przedziale $\langle e^{-1},e\rangle$ to $[a]e^2$, natomiast wartość najmniejsza $m$ to $-\frac{[b]}{e}$.
+\odpStop
+
+\testStart
+A. $M=[a]e, m=-\frac{[a]}{e^2}$
+B. $M=-\frac{[b]}{e}, m=[a]e^2$
+C. $M=[a]e^2, m=-\frac{[b]}{e}$
+D. $M=e^{-1}, m=e$
+\testStop
+
+\kluczStart
+C
+\kluczStop
+
+\end{document}

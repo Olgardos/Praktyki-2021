@@ -30,38 +30,58 @@
 \maketitle
 \kategoria{Wikieł/Z1.84f}
 \zadStart{Zadanie z Wikieł Z 1.84f moja wersja nr [nrWersji]}
-%[p1]:[1,2,4,5,8,10,16,20]
-%[p2]:[1,2,4,5,7,8,10,11]
-%[c1]=3-[p2]
-%[c2]=-4+1/[p1]
-%[c3]=-[c2]
-%[wynik]=[c3]/[c1]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]
-%[zlywynik3]=2*[wynik]-5
-%([wynik]).is_integer() is False
+%[p1]:[2,3,4,5,6,7,8,9,10]
+%[p2]:[2,3,4,5,6,7,8,9,10]
+%[s1]=2**[p1]
+%[s2]=2**[p2]
+%[g1]=4*[p1]
+%[g2]=4*[p2]
+%[g3]=3+[g2]
+%[Delta]=[g1]**2+4*[g2]*[g3]
+%[tDelta]=math.sqrt([Delta])
+%[sDelta]=int([tDelta])
+%[h1]=[g1]+[sDelta]
+%[h2]=2*[g2]
+%[gcd]=math.gcd([h1],[h2])
+%[h11]=int([h1]/[gcd])
+%[h22]=int([h2]/[gcd])
+%[a1]=[g1]-[sDelta]
+%[gcd2]=math.gcd([a1],[h2])
+%[a11]=-int([a1]/[gcd2])
+%[ak11]=int([h2]/[gcd2])
+%([tDelta]).is_integer() is True
 Rozwiązać równanie:
-$$2\cdot4^{\sqrt{[p2]x}}=\sqrt[[p1]]{2}\cdot8^{x-1}$$.
+$$2\cdot[s1]^{\sqrt{x}}=\sqrt[4]{2}\cdot[s2]^{x-1}$$.
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$2\cdot2^{[p2]x}=2^{\frac{1}{[p1]}}\cdot2^{3x-3}$$
-Dzielimy obie strony równania przez $2\cdot2^{[p2]x}$ otrzymując:
-$$1=2^{\frac{1}{[p1]}}\cdot2^{[c1]x-4}$$
-$$1=2^{[c1]x[c2]}$$
-Logarytmując obie strony równania otrzymujemy:
-$$[c1]x[c2]=0$$
-$$[c1]x=[c3]$$
-$$x=[wynik]$$
+$$2\cdot2^{[p1]\sqrt{x}}=2^{\frac{1}{4}}\cdot2^{[p2]x-[p2]}$$
+$$2^{[p1]\sqrt{x}+1}=2^{[p2]x-[p2]+\frac{1}{4}}$$
+Logarytmując obie strony równania otrzymujemy::
+$$[p1]\sqrt{x}+1=[p2]x-[p2]+\frac{1}{4}/\cdot4$$
+$$[g1]\sqrt{x}+4=[g2]x-[g2]+1$$
+Przenosimy wszystko na lewą stronę równania i upraszczamy:
+$$-[g2]x+[g1]\sqrt{x}+4-1+[g2]=0$$
+$$-[g2]x+[g1]\sqrt{x}+[g3]=0$$
+Podstawiając $t=\sqrt{x}$ otrzymamy równanie kwadratowe. Zakładamy także, że $t\geq0$.
+$$-[g2]t^{2}+[g1]t+[g3]=0$$
+Policzmy więc deltę:
+$$\Delta_{t}=[g1]^2-4(-[g2])[g3]=[Delta]\implies\sqrt{[Delta]}=[sDelta]$$
+Znajdźmy miejsca zerowe:
+$$t_{1}=\frac{-[g1]-[sDelta]}{2\cdot(-[g2])}=\frac{[g1]+[sDelta]}{2\cdot[g2]}=\frac{[h1]}{[h2]}=\frac{[h11]}{[h22]}$$
+$$t_{2}=\frac{-[g1]+[sDelta]}{2\cdot(-[g2])}=\frac{[g1]-[sDelta]}{2\cdot[g2]}=\frac{[a1]}{[h2]}=-\frac{[a11]}{[ak11]}$$
+Z racji naszego założenia, odrzucami wynik $t_{2}<0$ i rozpatrujemy jedynie $t_{1}$:
+$$t_{1}=\sqrt{x}=\frac{[h11]}{[h22]}$$
+Podnosimy obie strony do kwadratu otrzymując wynik:
+$$x=(\frac{[h11]}{[h22]})^{2}$$
 \rozwStop
 \odpStart
-$[wynik]$
+$$(\frac{[h11]}{[h22]})^{2}$$
 \odpStop
 \testStart
-A.$[zlywynik1]$
-B.$[wynik]$
-C.$[zlywynik2]$
-D.$10\cdot3$
-E.$[zlywynik3]$
+A.$$(\frac{[h22]}{[h11]})^{2}$$
+B.$$(\frac{[h11]}{[h22]})^{2}$$
+C.$$(\frac{[h11]}{[h22]})^{3}$$
+D.$$\frac{[h11]}{[h22]}$$
 \testStop
 \kluczStart
 B

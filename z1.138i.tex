@@ -36,23 +36,23 @@
 \zadStart{Zadanie z Wikieł Z 1.138 i) moja wersja nr [nrWersji]}
 %[a]:[2,3,4,5,6,7,8,9,10]
 Wyznaczyć funckję odwrotną do danej funkcji $f$ określonej na zbiorze $\mathcal{D}_{f}$.\\
-i) $f(x)=arctg(\frac{x}{[a]+x})\hspace{5mm}\mathcal{D}_{f}=\mathbb{R}\backslash\{-[a]\}$
+i) $f(x)=arctg\left(\frac{x}{[a]+x}\right)\hspace{5mm}\mathcal{D}_{f}=\mathbb{R}\backslash\{-[a]\}$
 \zadStop
-\rozwStart{Wojciech Przybylski}{}
-$$f(x)=arctg(\frac{x}{[a]+x})\hspace{5mm} \mathcal{D}_{f}=\mathbb{R}\backslash\{-[a]\}$$
-$$y=arctg(\frac{x}{[a]+x})\Rightarrow tg(y)=\frac{x}{[a]+x} \Rightarrow x=\frac{[a]tg(y)}{1-tg(y)}$$
+\rozwStart{Wojciech Przybylski}{Maja Szabłowska}
+$$f(x)=arctg\left(\frac{x}{[a]+x}\right)\hspace{5mm} \mathcal{D}_{f}=\mathbb{R}\backslash\{-[a]\}$$
+$$y=arctg\left(\frac{x}{[a]+x}\right)\Rightarrow tg(y)=\frac{x}{[a]+x} \Rightarrow x=\frac{[a]tg(y)}{1-tg(y)}$$
 $$1-tg(y)\neq0 \Rightarrow y\neq\frac{\pi}{4}+2k\pi\hspace{3mm}k\in\mathbb{Z}$$
-$$y=f^{-1}(x)=\frac{[a]tg(x)}{1-tg(x)} \mbox{ dla } x\in \mathbb{R}\backslash\{\frac{\pi}{4}+k\pi,\frac{\pi}{2}+k\pi\}\hspace{3mm}k\in\mathbb{Z}$$
+$$y=f^{-1}(x)=\frac{[a]tg(x)}{1-tg(x)} \mbox{ dla } x\in \mathbb{R}\backslash\left\{\frac{\pi}{4}+k\pi,\frac{\pi}{2}+k\pi\right\}\hspace{3mm}k\in\mathbb{Z}$$
 \rozwStop
 \odpStart
-$f^{-1}(x)=\frac{[a]tg(x)}{1-tg(x)}  \mbox{ dla }x\in \mathbb{R}\backslash\{\frac{\pi}{4}+k\pi,\frac{\pi}{2}+k\pi\}\hspace{3mm}k\in\mathbb{Z}$
+$f^{-1}(x)=\frac{[a]tg(x)}{1-tg(x)}  \mbox{ dla }x\in \mathbb{R}\backslash\left\{\frac{\pi}{4}+k\pi,\frac{\pi}{2}+k\pi\right\}\hspace{3mm}k\in\mathbb{Z}$
 \odpStop
 \testStart
-A. $f^{-1}(x)=\frac{[a]tg(x)}{1-tg(x)}   \mbox{ dla }x\in \mathbb{R}\backslash\{\frac{\pi}{4}+k\pi,\frac{\pi}{2}+k\pi\}\hspace{3mm}k\in\mathbb{Z}$\\
-B. $f^{-1}(x)=\frac{ctg(x)}{1+ctg(x)}  \mbox{ dla }x\in \mathbb{R}\backslash\{\frac{\pi}{3}+k\pi,\frac{\pi}{2}+k\pi\}\hspace{3mm}k\in\mathbb{Z}$\\
-C. $f^{-1}(x)=\frac{[a]}{1+tg(x)} \mbox{ dla }x\in \mathbb{R}\backslash\{\frac{\pi}{3}+k\pi,\frac{\pi}{2}+k\pi\}\hspace{3mm}k\in\mathbb{Z}$\\
-D. $f^{-1}(x)=\frac{[a]}{1-tg(x)} \mbox{ dla }x\in \mathbb{R}\backslash\{\frac{\pi}{4}+k\pi,\frac{\pi}{2}+k\pi\}\hspace{3mm}k\in\mathbb{Z}$\\
-E. $f^{-1}(x)=\frac{[a]tg(x)}{1+tg(x)} \mbox{ dla }x\in \mathbb{R}\backslash\{\frac{\pi}{4},\frac{\pi}{2}\}\hspace{3mm}k\in\mathbb{Z}$\\
+A. $f^{-1}(x)=\frac{[a]tg(x)}{1-tg(x)}   \mbox{ dla }x\in \mathbb{R}\backslash\left\{\frac{\pi}{4}+k\pi,\frac{\pi}{2}+k\pi\right\}\hspace{3mm}k\in\mathbb{Z}$\\
+B. $f^{-1}(x)=\frac{ctg(x)}{1+ctg(x)}  \mbox{ dla }x\in \mathbb{R}\backslash\left\{\frac{\pi}{3}+k\pi,\frac{\pi}{2}+k\pi\right\}\hspace{3mm}k\in\mathbb{Z}$\\
+C. $f^{-1}(x)=\frac{[a]}{1+tg(x)} \mbox{ dla }x\in \mathbb{R}\backslash\left\{\frac{\pi}{3}+k\pi,\frac{\pi}{2}+k\pi\right\}\hspace{3mm}k\in\mathbb{Z}$\\
+D. $f^{-1}(x)=\frac{[a]}{1-tg(x)} \mbox{ dla }x\in \mathbb{R}\backslash\left\{\frac{\pi}{4}+k\pi,\frac{\pi}{2}+k\pi\right\}\hspace{3mm}k\in\mathbb{Z}$\\
+E. $f^{-1}(x)=\frac{[a]tg(x)}{1+tg(x)} \mbox{ dla }x\in \mathbb{R}\backslash\left\{\frac{\pi}{4},\frac{\pi}{2}\right\}\hspace{3mm}k\in\mathbb{Z}$\\
 F. $f^{-1}(x)=\frac{[a]ctg(x)}{1-ctg(x)} \mbox{ dla }x\in \mathbb{R}$
 \testStop
 \kluczStart

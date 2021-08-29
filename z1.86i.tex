@@ -28,39 +28,48 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Wikieł/Z1.86i}
+\zadStart{Zadanie z Wikieł Z 1.86i moja wersja nr [nrWersji]}
+%[p1]:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+%[p2]:[2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+%[p3]:[2,3,5,6,7,10]
+%[d]=[p2]*[p3]
+%[a]=[p3]**[p1]
+%[Delta]=[p1]**2+4*[d]
+%[sDelta]=[Delta]**(1/2)
+%[tDelta]=int([sDelta])
+%[t1]=([p1]-[tDelta])/(2*(-[d]))
+%[t2]=([p1]+[tDelta])/(2*(-[d]))
+%[t11]=1000*[t1]
+%[t22]=1000*[t2]
+%[Delta]>0 and ([sDelta]).is_integer() is True and [t1]!=[a] and ([t11]).is_integer() is True and ([t22]).is_integer() is True
+Rozwiązać nierówność:
+$$[p3]^{-x}-[p2]\cdot[p3]^{x+1}<[p1]$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Mnożymy obie strony równania przez $[p3]^x$ otrzymując:
+$$1-[p2]\cdot[p3]^{2x+1}<[p1]\cdot[p3]^x$$
+$$1-[d]\cdot[p3]^{2x}<[p1]\cdot[p3]^x$$
+$$-[d]\cdot[p3]^{2x}-[p1]\cdot[p3]^x+1<0$$
+Podstawiając $t=[p3]^x$ otrzymamy do rozwiązania nierówność kwadratową:
+$$-[d]t^{2}-[p1]t+1<0$$
+$$\Delta_{t}=(-[p1])^2-4\cdot(-[d])\cdot1=[Delta]\implies \sqrt{\Delta_{t}}=[tDelta]$$\\
+Czas znaleźć miejsca zerowe:
+$$t_{1}=\frac{[p1]-[tDelta]}{2\cdot(-[d])}=[t1]$$
+$$t_{2}=\frac{[p1]+[tDelta]}{2\cdot(-[d])}=[t2]$$
+Współczynnik $a$ naszej funkcji kwadratowej jest ujemny oraz odrzucamy ujemne rozwiązania ponieważ $[p3]^x>0$. Zatem naszym rozwiązaniem jest:
+$$t>[t1]$$
+$$[p3]^x>[t1]\implies x>\frac{\ln[t1]}{\ln[p3]}$$
 \rozwStop
 \odpStart
-$$[wynik]$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$x>\frac{1}{\ln[p3]}$$
+B.$$x>\ln[t1]\cdot\ln[p3]$$
+C.$$x>\frac{\ln[t1]}{\ln[p3]}$$
+D.$$x<\frac{\ln[t1]}{\ln[p3]}$$
 \testStop
 \kluczStart
-B
+C
 \kluczStop
 \end{document}

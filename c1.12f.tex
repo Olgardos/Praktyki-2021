@@ -28,39 +28,42 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c1.12f}
+\zadStart{Zadanie z Beger C 1.12f moja wersja nr [nrWersji]}
+%[p1]:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+%[p2]:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+%[c]=[p1]+[p2]
+%[ss]=math.sqrt([c])
+%[a]=int([ss])
+%[aa]=2*[a]
+%([ss]).is_integer() is True
+Obliczyć całkę funkcji niewymiernej:
+$$\int \frac{1}{(x+[p1])\sqrt{[p2]-x}}\,dx$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Dokonujemy podstawienia:
+$$u=\sqrt{[p2]-x}\implies du=-\frac{1}{2\sqrt{[p2]-x}}dx\implies dx=-2\sqrt{[p2]-x}du$$
+Robiąc to podstawienie warto zauważyć, że:
+$$u=\sqrt{[p2]-x}\implies u^2=[p2]-x \implies x=[p2]-u^2$$
+Otrzymujemy wówczas:
+$$\int \frac{1}{(x+[p1])\sqrt{[p2]-x}}\cdot(-2\sqrt{[p2]-x})\,du=-2\int \frac{1}{x+[p1]}\,du=-2\int \frac{1}{[p2]-u^2+[p1]}\,du=$$
+$$=-2\int \frac{1}{-u^2+[c]}\,du=2\int \frac{1}{u^2-[c]}\,du$$
+Do policzenia otrzymanej całki wykorzystamy gotowy wzór: $$\int\frac{dx}{x^2-a^2}=\frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C$$
+Podstawiając otrzymujemy finalny wynik:
+$$2\int \frac{1}{u^2-[a]^2}\,du=\frac{1}{[a]}\ln\left|\frac{u-[a]}{u+[a]}\right|+C=\frac{1}{[a]}\ln\left|\frac{\sqrt{[p2]-x}-[a]}{\sqrt{[p2]-x}+[a]}\right|+C$$
+A więc dostajemy finalny wynik:
+$$\frac{1}{[a]}\ln\left|\frac{\sqrt{[p2]-x}-[a]}{\sqrt{[p2]-x}+[a]}\right|+C$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$\frac{1}{[a]}\ln\left|\frac{\sqrt{[p2]-x}-[a]}{\sqrt{[p2]-x}+[a]}\right|+C$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$-\frac{1}{[a]}\ln\left|\frac{\sqrt{[p2]-x}-[a]}{\sqrt{[p2]-x}+[a]}\right|+C$$
+B.$$\frac{1}{[a]}\ln\left|\frac{\sqrt{x}-[a]}{\sqrt{x}+[a]}\right|+C$$
+C.$$\frac{1}{[a]}\ln\left|\frac{\sqrt{[p2]-x}-[a]}{\sqrt{[p2]-x}+[a]}\right|+C$$
+D.$$\frac{1}{[a]}\ln\left|\frac{[p2]-x}{[a]}{\sqrt{[p2]-x}+[a]}\right|+C$$
 \testStop
 \kluczStart
-B
+C
 \kluczStop
 \end{document}

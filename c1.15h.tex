@@ -28,39 +28,42 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c1.15h}
+\zadStart{Zadanie z Beger C 1.15h moja wersja nr [nrWersji]}
+%[p1]:[1,4,9,16,25,36]
+%[p2]:[2,3,4,5,6,7,8,9]
+%[c]=2*[p1]
+%[s]=int(math.sqrt([p1]))
+Stosując odpowiednie metody całkowania obliczyć całkę:
+$$\int \sqrt{[p1]-e^{[p2]x}}\,dx$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Dokonujemy podstawienia:
+$$u=[p1]-e^{[p2]x} \implies du=-[p2]e^{[p2]x} dx\implies dx=-\frac{1}{[p2]e^{[p2]x}}du$$
+$$[p2]e^{[p2]x}=[p1]-u$$
+Otrzymujemy:
+$$\int \sqrt{[p1]-e^{[p2]x}}\cdot\frac{-1}{[p2]e^{[p2]x}}\,du=-\int \frac{\sqrt{u}}{[p1]-u}\,du=\int \frac{\sqrt{u}}{u-[p1]}\,du$$
+Dokonujemy kolejnego podstawienia:
+$$t=\sqrt{u} \implies dt=\frac{1}{2\sqrt{u}}du\implies du=2\sqrt{u}dt$$
+$$t^2=u$$
+Otrzymujemy:
+$$\int \frac{\sqrt{u}}{u-[p1]}\cdot2\sqrt{u}\,dt=2\int \frac{t^2}{t^2-[p1]}\,dt$$
+Przekształcamy naszą całkę otrzymując:
+$$2\int \frac{t^2}{t^2-[p1]}\,dt=2\int\frac{t^2-[p1]+[p1]}{t^2-[p1]}\,dt=2\int1\,dt+2\int\frac{[p1]}{t^2-[p1]}\,dt=2t+[c]\int\frac{1}{t^2-[p1]}\,dt$$
+Do policzenia otrzymanej całki użyjemy gotowego wzoru: $$\int\frac{dx}{x^2-a^2}=\frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C$$
+Po paru prostych obliczeniach otrzymujemy finalny wynik:
+$$2t+[c]\cdot\frac{1}{2\cdot[s]}\ln\left|\frac{t-[s]}{t+[s]}\right|+C=2t+\frac{[p1]}{[s]}\ln\left|\frac{t-[s]}{t+[s]}\right|+C=2\sqrt{u}+[s]\ln\left|\frac{\sqrt{u}-[s]}{\sqrt{u}+[s]}\right|+C=$$$$=2\sqrt{[p1]-e^{[p2]x}}+[c]\ln\left|\frac{\sqrt{[p1]-e^{[p2]x}}-[s]}{\sqrt{[p1]-e^{[p2]x}}+[s]}\right|+C$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$2\sqrt{[p1]-e^{[p2]x}}+[c]\ln\left|\frac{\sqrt{[p1]-e^{[p2]x}}-[s]}{\sqrt{[p1]-e^{[p2]x}}+[s]}\right|+C$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$\sqrt[[p1]]{x}e^{\sqrt[[p1]]{x}}-e^{\sqrt[[p1]]{x}}+C$$
+B.$$\frac{1}{\sqrt{[p1]\pi}}+C$$
+C.$$2\sqrt{[p1]-e^{[p2]x}}+[c]\ln\left|\frac{\sqrt{[p1]-e^{[p2]x}}-[s]}{\sqrt{[p1]-e^{[p2]x}}+[s]}\right|+C$$
+D.$$\ln\left|\frac{\left(\frac{1}{[p1]}\right)^x-1}{\left(\frac{1}{[p1]}\right)^x+1}\right|+C$$
 \testStop
 \kluczStart
-B
+C
 \kluczStop
 \end{document}

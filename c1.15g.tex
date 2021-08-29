@@ -28,37 +28,36 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c1.15g}
+\zadStart{Zadanie z Beger C 1.15g moja wersja nr [nrWersji]}
+%[p1]:[2,3,5,6,7,9,11,13,14,15,17,19,21]
+Stosując odpowiednie metody całkowania obliczyć całkę:
+$$\int \frac{dx}{\sqrt{[p1]\pi+e^x}}$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Dokonujemy podstawienia:
+$$u=[p1]\pi+e^x \implies du=e^x dx\implies dx=\frac{1}{e^x}du$$
+$$e^x=u-[p1]\pi$$
+Otrzymujemy:
+$$\int \frac{1}{\sqrt{[p1]\pi+e^x}}\cdot\frac{1}{e^x}\,du=\int \frac{1}{\sqrt{u}(u-[p1]\pi)}\,du$$
+Dokonujemy kolejnego podstawienia:
+$$t=\sqrt{u} \implies dt=\frac{1}{2\sqrt{u}}du\implies du=2\sqrt{u}dt$$
+$$t^2=u$$
+Otrzymujemy:
+$$\int \frac{1}{\sqrt{u}(u-[p1]\pi)}\cdot2\sqrt{u}\,dt=2\int\frac{1}{t^2-[p1]\pi}\,dt$$
+Do policzenia otrzymanej całki użyjemy gotowego wzoru: $$\int\frac{dx}{x^2-a^2}=\frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C$$
+Po paru prostych obliczeniach otrzymujemy finalny wynik:
+$$2\int\frac{1}{t^2-\sqrt{[p1]\pi}^2}\,dt=\frac{1}{\sqrt{[p1]\pi}}\ln\left|\frac{t-\sqrt{[p1]\pi}}{t+\sqrt{[p1]\pi}}\right|+C=\frac{1}{\sqrt{[p1]\pi}}\ln\left|\frac{\sqrt{u}-\sqrt{[p1]\pi}}{\sqrt{u}+\sqrt{[p1]\pi}}\right|+C=$$
+$$=\frac{1}{\sqrt{[p1]\pi}}\ln\left|\frac{\sqrt{[p1]\pi+e^x}-\sqrt{[p1]\pi}}{\sqrt{[p1]\pi+e^x}+\sqrt{[p1]\pi}}\right|+C$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$\frac{1}{\sqrt{[p1]\pi}}\ln\left|\frac{\sqrt{[p1]\pi+e^x}-\sqrt{[p1]\pi}}{\sqrt{[p1]\pi+e^x}+\sqrt{[p1]\pi}}\right|+C$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$\sqrt[[p1]]{x}e^{\sqrt[[p1]]{x}}-e^{\sqrt[[p1]]{x}}+C$$
+B.$$\frac{1}{\sqrt{[p1]\pi}}\ln\left|\frac{\sqrt{[p1]\pi+e^x}-\sqrt{[p1]\pi}}{\sqrt{[p1]\pi+e^x}+\sqrt{[p1]\pi}}\right|+C$$
+C.$$\frac{1}{\sqrt{[p1]\pi}}\ln\left|\frac{\sqrt{[p1]\pi}-\sqrt{[p1]\pi}}{\sqrt{[p1]\pi}+\sqrt{[p1]\pi}}\right|+C$$
+D.$$\ln\left|\frac{\left(\frac{1}{[p1]}\right)^x-1}{\left(\frac{1}{[p1]}\right)^x+1}\right|+C$$
 \testStop
 \kluczStart
 B

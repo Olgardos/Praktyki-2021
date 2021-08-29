@@ -1,0 +1,65 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Radosław Grzyb}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+\begin{document}
+\maketitle
+\kategoria{Beger/c1.15f}
+\zadStart{Zadanie z Beger C 1.15f moja wersja nr [nrWersji]}
+%[p1]:[2,3,5,7,11,13]
+%[p2]:[2,3,5,7,11,13]
+%[dd]=[p1]**2
+%[ww]=[p2]**2
+%[p1]<[p2]
+Stosując odpowiednie metody całkowania obliczyć całkę:
+$$\int \frac{[p1]^x\cdot[p2]^x}{[ww]^x-[dd]^x}\,dx$$
+\zadStop
+\rozwStart{Radosław Grzyb}{}
+Przekształcamy nieco naszą funkcję podcałkową:
+$$\int \frac{[p1]^x\cdot[p2]^x}{[ww]^x-[dd]^x}\cdot\frac{\frac{1}{[p1]^x\cdot[p2]^x}}{\frac{1}{[p1]^x\cdot[p2]^x}}\,dx=\int \frac{1}{\left(\frac{[ww]}{[p1]\cdot[p2]}\right)^x-\left(\frac{[dd]}{[p1]\cdot[p2]}\right)^x}\,dx=\int \frac{1}{\left(\frac{[p2]}{[p1]}\right)^x-\left(\frac{[p1]}{[p2]}\right)^x}\,dx$$
+Dokonujemy podstawienia:
+$$u=\left(\frac{[p2]}{[p1]}\right)^x\implies du=
+\left(\frac{[p2]}{[p1]}\right)^{x}\ln{\left(\frac{[p2]}{[p1]}\right)}dx\implies dx=\frac{1}{\left(\frac{[p2]}{[p1]}\right)^{x}\ln{\left(\frac{[p2]}{[p1]}\right)}}du$$
+Otrzymujemy:
+$$\int \frac{1}{\left(\frac{[p2]}{[p1]}\right)^x-\left(\frac{[p2]}{[p1]}\right)^{-x}}\cdot\frac{1}{\left(\frac{[p2]}{[p1]}\right)^{x}\ln{\left(\frac{[p2]}{[p1]}\right)}}\,du=\frac{1}{\ln{\left(\frac{[p2]}{[p1]}\right)}}\int\frac{1}{\left(\left(\frac{[p2]}{[p1]}\right)^{x}\right)^2-1} \,du=\frac{1}{\ln{\left(\frac{[p2]}{[p1]}\right)}}\int\frac{1}{u^2-1} \,du$$
+Do policzenia otrzymanej całki użyjemy gotowego wzoru: $$\int\frac{dx}{x^2-a^2}=\frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C$$
+Po paru prostych obliczeniach otrzymujemy finalny wynik:
+$$\frac{1}{\ln{\left(\frac{[p2]}{[p1]}\right)}}\int\frac{1}{u^2-1^2} \,du=\frac{1}{\ln{\left(\frac{[p2]}{[p1]}\right)}}\cdot\frac{1}{2\cdot1}\ln\left|\frac{u-1}{u+1}\right|+C=\frac{1}{2\ln{\left(\frac{[p2]}{[p1]}\right)}}\ln\left|\frac{\left(\frac{[p2]}{[p1]}\right)^x-1}{\left(\frac{[p2]}{[p1]}\right)^x+1}\right|+C$$
+\rozwStop
+\odpStart
+$$\frac{1}{2\ln{\left(\frac{[p2]}{[p1]}\right)}}\ln\left|\frac{\left(\frac{[p2]}{[p1]}\right)^x-1}{\left(\frac{[p2]}{[p1]}\right)^x+1}\right|+C$$
+\odpStop
+\testStart
+A.$$\sqrt[[p1]]{x}e^{\sqrt[[p1]]{x}}-e^{\sqrt[[p1]]{x}}+C$$
+B.$$\frac{1}{2\ln{\left(\frac{[p2]}{[p1]}\right)}}\ln\left|\frac{\left(\frac{[p2]}{[p1]}\right)^x-1}{\left(\frac{[p2]}{[p1]}\right)^x+1}\right|+C$$
+C.$$\pi^{\sqrt[[p1]]{x}}-[p1]e^{\sqrt[[p1]]{x}}+C$$
+D.$$\ln\left|\frac{\left(\frac{[p2]}{[p1]}\right)^x-1}{\left(\frac{[p2]}{[p1]}\right)^x+1}\right|+C$$
+\testStop
+\kluczStart
+B
+\kluczStop
+\end{document}

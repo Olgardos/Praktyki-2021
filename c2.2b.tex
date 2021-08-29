@@ -28,37 +28,33 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c2.2b}
+\zadStart{Zadanie z Beger C 2.2b moja wersja nr [nrWersji]}
+%[p1]:[1,2,3,4,5,6,7,8,9]
+%[p2]:[0,1,2,3,4,5,6,7,8]
+%[w1]=2/3*[p1]**(3/2)+2*[p1]**(1/2)-(2/3*[p2]**(3/2)+2*[p2]**(1/2))
+%[zw1]=1000*[w1]
+%[zw1]=10*[w1]
+%[zw2]=-[w1]
+%[zw3]=7+[w1]
+%[p1]>[p2] and ([zw1]).is_integer() is True
+Obliczyć całkę oznaczoną
+$$\int_{[p2]}^{[p1]} \frac{x+1}{\sqrt{x}} \,dx$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+$$\int_{[p2]}^{[p1]} \frac{x+1}{\sqrt{x}} \,dx = \int_{[p2]}^{[p1]} \sqrt{x}+\frac{1}{\sqrt{x}} \,dx = \int_{[p2]}^{[p1]} x^{\frac{1}{2}}+x^{-\frac{1}{2}} \,dx$$
+Całka nieoznaczona z naszej funkcji wynosi: $\frac{2}{3}x^{\frac{3}{2}}+2x^{\frac{1}{2}}$\\
+Podstawiając $[p1]$ oraz $[p2]$ w miejsce $x$ otrzymujemy:
+$$\frac{2}{3}[p1]^{\frac{3}{2}}+2\cdot[p1]^{\frac{1}{2}}-(\frac{2}{3}[p2]^{\frac{3}{2}}+2\cdot[p2]^{\frac{1}{2}})=[w]$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$[w]$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$[zw1]$
+B.$[w]$
+C.$[zw3]$
+D.$[zw2]$
 \testStop
 \kluczStart
 B

@@ -28,39 +28,36 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c1.5k}
+\zadStart{Zadanie z Beger C 1.5k moja wersja nr [nrWersji]}
+%[p1]:[2,3,4,5,6,7,8,9,10]
+Obliczyć, całkując przez podstawienie.
+$$\int \frac{[p1]}{\sin(x)\cos(x)\ln^2(\tan(x))} \,dx$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Podstawiamy:
+$$u=\tan(x)\implies du=\frac{1}{\cos^2(x)} dx \implies dx=\cos^2(x) du$$
+A więc przekształcamy nieco naszą funkcję podcałkową i podstawiamy:
+$$\int \frac{[p1]}{\sin(x)\cos(x)\ln^2(\tan(x))}\cdot\cos^2(x) \,du=[p1]\int \frac{\cos^2(x)}{\sin(x)\cos(x)\ln^2(\tan(x))}\,du=$$
+$$=[p1]\int \frac{\cos(x)}{\sin(x)\ln^2(\tan(x))}\,du=[p1]\int \frac{\cot(x)}{\ln^2(\tan(x))}\,du=[p1]\int \frac{1}{\tan(x)\ln^2(\tan(x))}\,du$$
+$$=[p1]\int \frac{1}{u\ln^2(u)}\,du$$
+Powyższą całkę możemy obliczyć dokonując kolejnego podstawienia:
+$$t=\ln(u)\implies dt=\frac{1}{u} du \implies du=u dt$$
+A więc otrzymujemy:
+$$[p1]\int \frac{1}{u\ln^2(u)}\cdot u\,dt=[p1]\int \frac{1}{t^2}\,dt=-\frac{[p1]}{t}+C$$
+Zatem naszym końcowym wynikiem jest:
+$$-\frac{[p1]}{t}+C=-\frac{[p1]}{\ln(u)}+C=-\frac{[p1]}{\ln(\tan(x))}+C$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$-\frac{[p1]}{\ln(\tan(x))}+C$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$-\frac{1}{[p1]\arctan^{[p1]}(x)}+C$$
+B.$$\frac{[p1]}{11}\arctan\frac{x}{[p1]}+C$$
+C.$$-\frac{[p1]}{\ln(\tan(x))}+C$$
+D.$$\frac{1}{[p1]}\arcsin|\frac{x}{[p1]}|+C$$
 \testStop
 \kluczStart
-B
+C
 \kluczStop
 \end{document}

@@ -28,37 +28,44 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c1.12d}
+\zadStart{Zadanie z Beger C 1.12d moja wersja nr [nrWersji]}
+%[p1]:[6,8,10,12,14]
+%[p3]:[2,3,4,5]
+%[dp1]=int([p1]/2)
+%[dp2]=[p1]-1
+%[s1]=2*[p3]
+%[s2]=[p3]**2
+%[s3]=[p1]*[s1]
+%[s4]=[p1]*[s2]
+Obliczyć całkę funkcji niewymiernej:
+$$\int \frac{\sqrt[[dp1]]{x}}{x+[p3]\sqrt[[p1]]{x^{[dp2]}}}\,dx$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Najpierw przekształćmy nieco naszą funkcję podcałkową:
+$$\int \frac{\sqrt[[dp1]]{x}}{x+[p3]\sqrt[[p1]]{x^{[dp2]}}}\,dx=\int \frac{x^{\frac{1}{[dp1]}}}{x^{\frac{[p1]}{[p1]}}+[p3]x^{\frac{[dp2]}{[p1]}}}\,dx=\int \frac{(x^{\frac{1}{[p1]}})^{2}}{x^{\frac{[dp2]}{[p1]}}(x^{\frac{1}{[p1]}}+[p3])}\,dx$$
+Możemy teraz dokonać pierwszego podstawienia:
+$$u=x^{\frac{1}{[p1]}}\implies du=\frac{1}{[p1]x^{\frac{[dp2]}{[p1]}}}dx\implies dx=[p1]x^{\frac{[dp2]}{[p1]}}du$$
+A więc otrzymujemy:
+$$\int \frac{(x^{\frac{1}{[p1]}})^{2}}{x^{\frac{[dp2]}{[p1]}}(x^{\frac{1}{[p1]}}+[p3])}\cdot[p1]x^{\frac{[dp2]}{[p1]}}\,du=
+[p1]\int\frac{u^2}{u+[p3]} \,du$$
+Dokonujemy kolejnego podstawienia:
+$$t=u+[p3]\implies dt=du \implies u=t-[p3]$$
+Otrzymujemy wówczas:
+$$[p1]\int\frac{(t-[p3])^2}{t} \,dt=[p1]\int\frac{t^{2}-[s1]t+[s2]}{t} \,dt=\int[p1]t-[s3]+\frac{[s4]}{t} \,dt$$
+Obliczamy tę całkę i otrzymujemy wynik:
+$$\int[p1]t-[s3]+\frac{[s4]}{t} \,dt=\frac{[p1]}{2}t^{2}-[s3]t+[s4]\ln|t|+C=$$
+$$=[dp1](u+[p3])^{2}-[s3](u+[p3])+[s4]\ln|(u+[p3])|+C=$$
+$$=[dp1](x^{\frac{1}{[p1]}}+[p3])^{2}-[s3](x^{\frac{1}{[p1]}}+[p3])+[s4]\ln|(x^{\frac{1}{[p1]}}+[p3])|+C$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$=[dp1](x^{\frac{1}{[p1]}}+[p3])^{2}-[s3](x^{\frac{1}{[p1]}}+[p3])+[s4]\ln|(x^{\frac{1}{[p1]}}+[p3])|+C$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$-\frac{1}{[p3]\arctan^{[s1]}(x)}+C$$
+B.$$=[dp1](x^{\frac{1}{[p1]}}+[p3])^{2}-[s3](x^{\frac{1}{[p1]}}+[p3])+[s4]\ln|(x^{\frac{1}{[p1]}}+[p3])|+C$$
+C.$$=[dp1](x^{\frac{1}{[p1]}}+[p3])^{3}-[s3](x^{\frac{1}{[p1]}}+[p3])+[s4]\ln|(x^{\frac{1}{[p1]}}+[p3])|+C$$
+D.$$\frac{1}{[s1]}\cot|\frac{x}{[p3]}|+C$$
 \testStop
 \kluczStart
 B

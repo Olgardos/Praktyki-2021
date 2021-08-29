@@ -28,39 +28,39 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c1.12e}
+\zadStart{Zadanie z Beger C 1.12e moja wersja nr [nrWersji]}
+%[p1]:[2,3,5,6,7,9,10,11,13]
+%[s1]=2*[p1]
+Obliczyć całkę funkcji niewymiernej:
+$$\int \frac{\sqrt{x}}{x+[p1]}\,dx$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Dokonujemy podstawienia:
+$$u=\sqrt{x}\implies du=\frac{1}{2\sqrt{x}}dx\implies dx=2\sqrt{x} du$$
+$$u^2=x$$
+A więc otrzymujemy:
+$$\int \frac{\sqrt{x}}{x+[p1]}\cdot2\sqrt{x} \,du=2\int \frac{u^2}{u^2+[p1]}\,du$$
+Przekształcamy nieco naszą funkcję podcałkową:
+$$2\int \frac{u^2}{u^2+[p1]}\,du=2\int \frac{u^2+[p1]-[p1]}{u^2+[p1]}\,du=2\int1-\frac{[p1]}{u^2+[p1]}\,du=$$
+$$=2\int1\,du-2\int\frac{[p1]}{u^2+[p1]}\,du$$
+Mamy do policzenia dwie proste całki:
+$$=2\int1\,du=2u+C=2\sqrt{x}+C$$
+Do policzenia drugiej wykorzystamy gotowy wzór $\int\frac{dx}{x^2+a^2}=\frac{1}{a}\arctan\frac{x}{a}+C$
+$$-2\int\frac{[p1]}{u^2+[p1]}\,du=-[s1]\int\frac{1}{u^2+[p1]}\,du=-[s1]\cdot\frac{1}{\sqrt{[p1]}}\arctan\frac{u}{\sqrt{[p1]}}+C$$
+Otrzymujemy finalny wynik:
+$$-\frac{[s1]}{\sqrt{[p1]}}\arctan\frac{\sqrt{x}}{\sqrt{[p1]}}+C$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$-\frac{[s1]}{\sqrt{[p1]}}\arctan\frac{\sqrt{x}}{\sqrt{[p1]}}+C$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$-\frac{1}{[p1]\arctan^{[s1]}(x)}+C$$
+B.$$-\frac{[s1]}{\sqrt{[p1]}}\arctan\frac{x}{\sqrt{[p1]}}+C$$
+C.$$\frac{[s1]}{\sqrt{[p1]}}\arctan\frac{\sqrt{x}}{\sqrt{[p1]}}+C$$
+D.$$-\frac{[s1]}{\sqrt{[p1]}}\arctan\frac{\sqrt{x}}{\sqrt{[p1]}}+C$$
 \testStop
 \kluczStart
-B
+D
 \kluczStop
 \end{document}

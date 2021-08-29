@@ -28,39 +28,47 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c1.12g}
+\zadStart{Zadanie z Beger C 1.12g moja wersja nr [nrWersji]}
+%[p1]:[1,2,3,4,5,6,7,8,9]
+%[p2]:[2,3,4,5,6,7]
+%[ab1]=2*[p2]
+%[ab2]=[p2]**2
+%[aab1]=4*[ab1]
+%[aab2]=4*[ab2]
+Obliczyć całkę funkcji niewymiernej:
+$$\int \frac{1}{\sqrt{x-[p1]}+[p2]\sqrt[4]{x-[p1]}}\,dx$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Dokonujemy podstawienia:
+$$u=x-[p1]\implies du=dx$$
+Otrzymujemy:
+$$\int \frac{1}{\sqrt{u}+[p2]\sqrt[4]{u}}\,du$$
+Dokonujemy kolejnego podstawienia:
+$$t=\sqrt[4]{u} \implies dt=\frac{1}{4}u^{-\frac{3}{4}} du\implies du=4u^{\frac{3}{4}}dt$$
+Otrzymujemy: 
+$$\int \frac{1}{\sqrt{u}+[p2]\sqrt[4]{u}}\cdot4u^{\frac{3}{4}}\,dt=4\int \frac{u^{\frac{3}{4}}}{u^{\frac{2}{4}}+[p2]u^{\frac{1}{4}}}\,dt=4\int\frac{t^3}{t^2+[p2]t}\,dt=4\int\frac{t^3}{t(t+[p2])}\,dt=4\int\frac{t^2}{t+[p2]}\,dt$$
+Ponownie dokonamy podstawienia!:
+$$w=t+[p2] \implies dw=dt$$
+$$t=w-[p2]$$
+Otrzymujemy do policzenia całkę:
+$$4\int\frac{t^2}{t+[p2]}\,dt=4\int\frac{(w-[p2])^2}{w}\,dw=4\int\frac{w^2-[ab1]w+[ab2]}{w}\,dw=$$
+$$=4\int w\,dw-4\int [ab1]\,dw +4\int\frac{[ab2]}{w}\,dw=4\int w\,dw-\int [aab1]\,dw +[aab2]\int\frac{1}{w}\,dw=$$
+$$=2w^{2}-[aab1]w+[aab2]\ln|w|+C=2(t+[p2])^{2}-[aab1](t+[p2])+[aab2]\ln|t+[p2]|+C=$$
+$$=2(\sqrt[4]{u}+[p2])^{2}-[aab1](\sqrt[4]{u}+[p2])+[aab2]\ln|\sqrt[4]{u}+[p2]|+C$$\\
+Po finalnym podstawieniu otrzymujemy odpowiedź:
+$$2(\sqrt[4]{x-[p1]}+[p2])^{2}-[aab1](\sqrt[4]{x-[p1]}+[p2])+[aab2]\ln|\sqrt[4]{x-[p1]}+[p2]|+C$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$2(\sqrt[4]{x-[p1]}+[p2])^{2}-[aab1](\sqrt[4]{x-[p1]}+[p2])+[aab2]\ln|\sqrt[4]{x-[p1]}+[p2]|+C$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$2(\sqrt[4]{x-[p1]}+[p2])^{2}-[aab1](\sqrt[4]{x-[p1]}+[p2])+[aab2]\ln|x-[p1]|+C$$
+B.$$2(\sqrt[3]{x-[p1]}+[p2])^{2}-[aab1](\sqrt[4]{x-[p1]}+[p2])+[aab2]\ln|\sqrt[3]{x-[p1]}+[p2]|+C$$
+C.$$2(\sqrt[4]{x-[p1]}+[p2])^{2}-[aab1](\sqrt[4]{x-[p1]}+[p2])+[aab2]\ln|\sqrt[4]{x-[p1]}+[p2]|+C$$
+D.$$2(\sqrt[4]{x-[p1]}+[p2])^{3}+C$$
 \testStop
 \kluczStart
-B
+C
 \kluczStop
 \end{document}

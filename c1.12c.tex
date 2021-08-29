@@ -28,39 +28,37 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c1.12c}
+\zadStart{Zadanie z Beger C 1.12c moja wersja nr [nrWersji]}
+%[p1]:[1,2,4,5,6,7,8,10,11]
+%[c]=[p1]*4
+Obliczyć całkę funkcji niewymiernej:
+$$\int \frac{\sqrt{x}}{[p1]-\sqrt[4]{x^3}}\,dx$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Przekształćmy lekko naszą funkcję podcałkową:
+$$\int \frac{\sqrt{x}}{[p1]-\sqrt[4]{x^3}}\,dx=-\int \frac{x^{\frac{1}{2}}}{x^{\frac{3}{4}}-[p1]}\,dx$$
+Podstawmy teraz:
+$$u=x^{\frac{3}{4}}-[p1]\implies du=\frac{3}{4x^{\frac{1}{4}}}dx\implies dx=\frac{4x^{\frac{1}{4}}}{3}du$$
+Otrzymujemy wówczas:
+$$-\int \frac{x^{\frac{1}{2}}}{x^{\frac{3}{4}}-[p1]}\cdot\frac{4x^{\frac{1}{4}}}{3}\,du=-\frac{4}{3}\int \frac{x^{\frac{1}{2}+\frac{1}{4}}}{x^{\frac{3}{4}}-[p1]}\,du=-\frac{4}{3}\int \frac{x^{\frac{3}{4}}}{x^{\frac{3}{4}}-[p1]}\,du=-\frac{4}{3}\int \frac{u+[p1]}{u}\,du$$
+Otrzymaliśmy w miarę prostą do policzenia całkę:
+$$-\frac{4}{3}\int \frac{u+[p1]}{u}\,du=-\frac{4}{3}\int1\,du-\frac{[c]}{3}\int\frac{1}{u}\,du=-\frac{4}{3}u-\frac{[c]}{3}\ln|u|+C$$
+A więc otrzymujemy finalny wynik:
+$$-\frac{4}{3}x^{\frac{3}{4}}-\frac{[c]}{3}\ln|x^{\frac{3}{4}}|+C$$
+Otrzymujemy finalny wynik:
+$$-\frac{4}{3}x^{\frac{3}{4}}-\frac{[c]}{3}\ln|x^{\frac{3}{4}}|+C$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$-\frac{4}{3}x^{\frac{3}{4}}-\frac{[c]}{3}\ln|x^{\frac{3}{4}}|+C$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$\frac{4}{3}x^{\frac{3}{4}}-\frac{[c]}{3}\ln|x^{\frac{3}{4}}|+C$$
+B.$$-x\frac{4}{3}x^{\frac{3}{4}}-\frac{[c]}{3}\ln|x^{\frac{3}{4}}|+C$$
+C.$$\frac{[c]}{\sqrt{[p1]}}\arctan\frac{\sqrt{x}}{\sqrt{[p1]}}+C$$
+D.$$-\frac{4}{3}x^{\frac{3}{4}}-\frac{[c]}{3}\ln|x^{\frac{3}{4}}|+C$$
 \testStop
 \kluczStart
-B
+D
 \kluczStop
 \end{document}

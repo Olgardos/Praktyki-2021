@@ -32,50 +32,53 @@
 \maketitle
 
 
-\kategoria{Wikieł/z1.83a}
-\zadStart{Zadanie z Wikieł z1.83a) moja wersja nr [nrWersji]}
-%[p1]:[0,1,2,3,4,5]
-%[p2]:[2,3,4,5,6]
-%[r1]=int(math.pow(2,[p1]))
-%[r2]=[p2]+[p1]
-%[delta]=abs(1-4*(-[r2]))
-%[pdelta]=int(math.pow([delta],(1/2)))
-%[c1]=math.sqrt([delta])
-%[c2]=math.isqrt([delta])
-%[x1]=int((1-[pdelta])/2)
-%[x2]=int((1+[pdelta])/2)
-%[f1a]=[x1]-1
-%[f2a]=[x1]-2
-%[f3a]=[x1]-3
-%[f1b]=[x2]+1
-%[f2b]=[x2]+2
-%[f3b]=[x2]+3
-%not([c1]!=[c2]) and [delta]>0
-Wyznaczyć wartośći x, dla których funkcja $y=2^{x^2-x-[p2]}$ przyjmuje wartość [r1]
+\kategoria{Wikieł/z1.81b}
+\zadStart{Zadanie z Wikieł z.1.81b) moja wersja nr [nrWersji]}
+%[p1]:[1,2,3,4,5,6]
+%[p2]:[2,3,4,5,6,7,8]
+%[p3]:[2,3,4,5,6,7,8]
+%[Delta]=1+(4*[p3])
+%[PDelta]=int(math.pow([Delta],(1/2)))
+%[x1]=int((-1-[PDelta])/2)
+%[x2]=int((-1+[PDelta])/2)
+%[c1]=math.sqrt([Delta])
+%[c2]=math.isqrt([Delta])
+%[f1]=[x1]+1
+%[f2]=[x1]+2
+%[f3]=[x1]+3
+%[f4]=[x1]+4
+%[f5]=[x2]+1
+%[f6]=[x2]+2
+%[f7]=[x2]+3
+%[f8]=[x2]+4
+%[p1]<[p2] and [Delta]>0 and not([c1]!=[c2])
+Wyznaczyć wartości zmiennej x, dla których funkcje f i g mają równe wartości.
+a)$f(x)=(\frac{[p1]}{[p2]})^{x^2} \ \ \ \ g(x)=(\frac{[p1]}{[p2]})^{[p3]-x}$
 \zadStop
 \rozwStart{Jacek Jabłoński}{}
-$$2^{x^2-x-[p2]} = [r1] $$
-$$2^{x^2-x-[p2]} = 2^{[p1]}$$
-$$x^2-x-[p2] = [p1]$$
-$$x^2-x-[r2] = 0$$
-$$\Delta = [delta]$$
-$$\sqrt{\Delta} = [pdelta]$$
-$$x_1 = \frac{1 - [pdelta]}{2} = [x1]$$
-$$x_2 = \frac{1 + [pdelta]}{2} = [x2]$$
+$$f(x)=f(g)$$
+$$(\frac{[p1]}{[p2]})^{x^2} = (\frac{[p1]}{[p2]})^{[p3]-x}$$
+$$x^2 = [p3]-x$$
+$$x^2 + x - [p3] = 0$$
+$$\Delta = [Delta] $$
+$$\sqrt{\Delta} = [PDelta] $$
+$$x_1 = \frac{-1-[PDelta]}{2} = [x1] $$
+$$x_2 = \frac{-1+[PDelta]}{2} = [x2] $$
+$$x = [x1] \ \ lub \ \ x = [x2]$$
 \rozwStop
 \odpStart
-$$x \in \{[x1],[x2]\}$$
+$$x = [x1] \ \ lub \ \ x = [x2]$$
 \odpStop
 \testStart
-A. $$x \in \{[x1],[x2]\}$$
-B. $$x \in \{[x1],[f1b]\}$$
-C. $$x \in \{[x1],[f2b]\}$$
-D. $$x \in \{[x1],[f3b]\}$$
-E. $$x \in \{[f1a],[x2]\}$$
-F. $$x \in \{[f2a],[x2]\}$$
-G. $$x \in \{[f3a],[x2]\}$$
-H. $$x \in \{[f3a],[f3b]\}$$
-I. $$x \in \{[f2a],[f2b]\}$$
+A. $$x = [x1] \ \ lub \ \ x = [x2]$$
+B. $$x = [f1] \ \ lub \ \ x = [f5]$$
+C. $$x = [f2] \ \ lub \ \ x = [f6]$$
+D. $$x = [f3] \ \ lub \ \ x = [f7]$$
+E. $$x = [f4] \ \ lub \ \ x = [f8]$$
+F. $$x = [x1] \ \ lub \ \ x = [f5]$$
+G. $$x = [x1] \ \ lub \ \ x = [f6]$$
+H. $$x = [x1]$$
+I. $$x = [x2]$$
 \testStop
 \kluczStart
 A

@@ -28,39 +28,39 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Wikieł/Z1.88}
+\zadStart{Zadanie z Wikieł Z 1.88 moja wersja nr [nrWersji]}
+%[p1]:[5,7,11,13,15]
+%[p3]:[5,23,77]
+%[p2]:[7,55,247]
+%[wykl]:[2,3,4]
+%[Czw]=4+[p3]
+%[Trz]=9+[p2]
+%([p3]==5 and [p2]==7 and [wykl]==2) or ([p3]==23 and [p2]==55 and [wykl]==3) or ([p3]==77 and [p2]==247 and [wykl]==4)
+Dane są funkcje $f(x)=4^{x+1}-[p2]\cdot3^{x}$ i $g(x)=3^{x+2}-[p3]\cdot4^{x}$.\\ Rozwiązać nierówność $f(x)\leq g(x)$.
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Przekształcamy naszą nierówność:
+$$4^{[p1]x+1}-[p2]\cdot3^{[p1]x}\leq3^{[p1]x+2}-[p3]\cdot4^{[p1]x}$$
+$$4\cdot4^{[p1]x}-[p2]\cdot3^{[p1]x}\leq9\cdot3^{[p1]x}-[p3]\cdot4^{[p1]x}$$
+$$4\cdot4^{[p1]x}+[p3]\cdot4^{[p1]x}\leq9\cdot3^{[p1]x}+[p2]\cdot3^{[p1]x}$$
+$$[Czw]\cdot4^{[p1]x}\leq[Trz]\cdot3^{[p1]x}$$
+Dzielimy obie stronyu równania przez $3^{[p1]x}$ oraz $[Czw]$ otrzymując:
+$$\left(\frac{4}{3}\right)^{[p1]x}\leq\frac{[Trz]}{[Czw]}$$
+$$\left(\frac{4}{3}\right)^{[p1]x}\leq\left(\frac{4}{3}\right)^{[wykl]}$$
+Logarytmując otrzymujemy prostą nierówność i zarazem odpowiedź:
+$$[p1]x\leq[wykl]\implies x\leq\frac{[wykl]}{[p1]}$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$x\leq\frac{[wykl]}{[p1]}$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$x\leq\frac{[wykl]}{[p1]}$$
+B.$$x\geq\frac{[wykl]}{[p1]}$$
+C.$$x\leq\-\frac{[wykl]}{[p1]}$$
+D.$$x\leq[p1]$$
 \testStop
 \kluczStart
-B
+A
 \kluczStop
 \end{document}

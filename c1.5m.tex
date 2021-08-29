@@ -28,37 +28,36 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c1.5m}
+\zadStart{Zadanie z Beger C 1.5m moja wersja nr [nrWersji]}
+%[p1]:[3,5,7,9,11]
+%[p2]:[4,9,16,25,36]
+%[v]=int([p1]/2)
+%[c]=int(math.sqrt([p2]))
+%[h]=2*[c]
+%[g]=math.gcd([h],[p1])
+%[h1]=int([h]/[g])
+%[p11]=int([p1]/[g])
+Obliczyć, całkując przez podstawienie.
+$$\int \frac{[p1]\sin(x)\cos(x)}{\sin^{4}(x)+[p2]} \,dx$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Podstawiamy:
+$$u=\sin^{2}(x) \implies du=2\sin(x)\cos(x)dx \implies dx=\frac{1}{2\sin(x)\cos(x)} du$$
+A więc:
+$$\int \frac{[p1]\sin(x)\cos(x)}{(\sin^{2}(x))^{2}+[p2]}\cdot\frac{1}{2\sin(x)\cos(x)} \,du=\frac{[p1]}{2}\int\frac{1}{u^{2}+[p2]}\,du$$
+Otrzymaliśmy prostą do policzenia całkę. Do jej obliczenia wykorzystamy gotowy wzór:$\int\frac{dx}{x^2+a^2}=\frac{1}{a}\arctan\frac{x}{a}+C$
+A więc otrzymujemy:
+$$\frac{[p1]}{2}\int\frac{1}{u^{2}+[p2]}\,du=\frac{[p1]}{2}\cdot\frac{1}{[c]}\arctan\frac{x}{[c]}+C=\frac{[p11]}{[h1]}\arctan\frac{x}{[c]}+C$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$\frac{[p11]}{[h1]}\arctan\frac{x}{[c]}+C$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$-\frac{1}{[p2]\arctan^{[c]}(x)}+C$$
+B.$$\frac{[p11]}{[h1]}\arctan\frac{x}{[c]}+C$$
+C.$$\frac{\ln|\ln(x)-[p1]|}{[p2]}-\frac{[p1]}{[p2]\ln(x)-[c]}+C$$
+D.$$\frac{1}{[c]}\arcsin|\frac{x}{[p2]}|+C$$
 \testStop
 \kluczStart
 B

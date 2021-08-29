@@ -28,39 +28,51 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
+\kategoria{Wikieł/Z1.84q}
+\zadStart{Zadanie z Wikieł Z 1.84q moja wersja nr [nrWersji]}
+%[p1]:[1,2,3,4,5,6,7,8,10]
+%[p2]:[2,3,5]
+%[p3]:[1,2,3,4,5,6,7,8,9,11,12,13]
+%[r]=[p2]**[p1]
+%[pp]=[p2]**2
+%[gcd]=math.gcd([p1],[pp])
+%[gcd1]=int([p1]/[gcd])
+%[gcd2]=int([pp]/[gcd])
+%[f]=[p3]*[gcd2]
+%[Delta]=[p1]**2+4*[f]*[gcd2]
+%[sDelta]=math.sqrt([Delta])
+%[tDelta]=int([sDelta])
+%[t1]=int((-[p1]-[tDelta])/2)
+%[t2]=int((-[p1]+[tDelta])/2)
+%[Delta]>0 and ([sDelta]).is_integer() is True
 Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+$$[pp]^x+[p1]\cdot[p2]^{x-\frac{1}{2}}=[p3]$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Przekształcamy nasze równanie:
+$$[p2]^{2x}+[p1]\cdot\frac{1}{[pp]}\cdot[p2]^{x}=[p3]$$
+$$[p2]^{2x}+\frac{[gcd1]}{[gcd2]}\cdot[p2]^{x}=[p3]$$
+$$[gcd2]\cdot[p2]^{2x}+[gcd1]\cdot[p2]^{x}-[f]=0$$
+Podstawiając $t=[p2]^{x}$ otrzymamy do rozwiązania równanie kwadratowe:
+$$[gcd2]t^{2}+[p1]t-[f]=0$$
+$$\Delta_{t}=[p1]^2-4\cdot[gcd2]\cdot(-[f])=[Delta]\implies \sqrt{\Delta_{t}}=[tDelta]$$\\
+Czas znaleźć miejsca zerowe:
+$$t_{1}=\frac{-[p1]-[tDelta]}{2\cdot[gcd2]}=[t1]$$
+$$t_{2}=\frac{-[p1]+[tDelta]}{2\cdot[gcd2]}=[t2]$$
+Współczynnik $a$ naszej funkcji kwadratowej jest dodatni oraz odrzucamy ujemne rozwiązania ponieważ $[p2]^x\geq0$. Zatem naszym rozwiązaniem jest:
+$$t=[t2]$$
+$$[p2]^x=[t2] \implies x=\frac{\ln[t2]}{\ln[p2]}$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$x=\frac{\ln[t2]}{\ln[p2]}$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$x=\frac{\ln[t2]}{\sin[p2]}$$
+B.$$x=\frac{\arcsin[t2]}{\ln[p2]}$$
+C.$$x=\frac{\tan[t2]}{\ln[p2]}$$
+D.$$x=\frac{\ln[t2]}{\ln[p2]}$$
 \testStop
 \kluczStart
-B
+D
 \kluczStop
 \end{document}

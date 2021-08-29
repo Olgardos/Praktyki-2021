@@ -28,39 +28,34 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Wikieł/Z1.86g}
+\zadStart{Zadanie z Wikieł Z 1.86g moja wersja nr [nrWersji]}
+%[p1]:[2,4,5,7,8,10,11,13,14,16,17,19,20,22,25]
+Rozwiązać nierówność:
+$$2^{[p1]x+3}-5^{[p1]x}<7\cdot2^{[p1]x-2}-3\cdot5^{[p1]x-1}$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Przekształcamy lekko naszą nierówność:
+$$8\cdot2^{[p1]x}-5^{[p1]x}<\frac{7}{4}\cdot2^{[p1]x}-\frac{3}{5}\cdot5^{[p1]x}$$
+Mnożymy obie strony przez $20$:
+$$160\cdot2^{[p1]x}-20\cdot5^{[p1]x}<35\cdot2^{[p1]x}-12\cdot5^{[p1]x}$$
+$$160\cdot2^{[p1]x}-35\cdot2^{[p1]x}<20\cdot5^{[p1]x}-12\cdot5^{[p1]x}$$
+$$125\cdot2^{[p1]x}<8\cdot5^{[p1]x}$$
+Dzielimy obie strony przez $5^{[p1]x}$ oraz $125$:
+$$\left(\frac{2}{5}\right)^{[p1]x}<\frac{8}{125}$$ 
+$$\left(\frac{2}{5}\right)^{[p1]x}<\left(\frac{2}{5}\right)^3$$
+Logarytmując obie strony otrzymujemy:
+$$[p1]x>3\implies x>\frac{3}{[p1]}$$
 \rozwStop
 \odpStart
-$$[wynik]$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$x>[p1]$$
+B.$$x<\frac{3}{[p1]}$$
+C.$$x>\frac{1}{[p1]}$$
+D.$$x>\frac{3}{[p1]}$$
 \testStop
 \kluczStart
-B
+D
 \kluczStop
 \end{document}

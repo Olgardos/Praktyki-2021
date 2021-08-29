@@ -28,37 +28,33 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Beger/c1.15d}
+\zadStart{Zadanie z Beger C 1.15d moja wersja nr [nrWersji]}
+%[p1]:[3,5,7,9,11,13,15,17,19,21]
+%[dd]=[p1]-2
+%[ww]=[p1]-1
+Stosując odpowiednie metody całkowania obliczyć całkę:
+$$\int \frac{e^{\sqrt[[p1]]{x}}}{\sqrt[[p1]]{x^{[dd]}}}\,dx$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Dokonujemy podstawienia:
+$$u=\sqrt[[p1]]{x}\implies du=\frac{1}{[p1]x^{\frac{[ww]}{[p1]}}}dx\implies dx=[p1]x^{\frac{[ww]}{[p1]}}du$$
+Otrzymujemy:
+$$\int \frac{e^{x^{\frac{1}{[p1]}}}}{x^{\frac{[dd]}{[p1]}}}\cdot[p1]x^{\frac{[ww]}{[p1]}}\,du=[p1]\int\frac{e^u\cdot u^{[ww]}}{u^{[dd]}}du=[p1]\int ue^u \,du$$
+Otrzymaną całkę policzymy przez części:
+$$f=u \implies f'=1$$
+$$g'=e^u \implies g=e^u$$
+Podstawiając do $fg'=fg-\int f'g$ otrzymujemy praktycznie finalny wynik: 
+$$[p1]ue^u-[p1]\int1\cdot e^u du=[p1]ue^u-[p1]e^u+C=[p1]\sqrt[[p1]]{x}e^{\sqrt[[p1]]{x}}-[p1]e^{\sqrt[[p1]]{x}}+C$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$[p1]\sqrt[[p1]]{x}e^{\sqrt[[p1]]{x}}-[p1]e^{\sqrt[[p1]]{x}}+C$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$\sqrt[[p1]]{x}e^{\sqrt[[p1]]{x}}-e^{\sqrt[[p1]]{x}}+C$$
+B.$$[p1]\sqrt[[p1]]{x}e^{\sqrt[[p1]]{x}}-[p1]e^{\sqrt[[p1]]{x}}+C$$
+C.$$e^{\sqrt[[p1]]{x}}-[p1]e^{\sqrt[[p1]]{x}}+C$$
+D.$$e^{\sqrt[[p1]]{x}}+C$$
 \testStop
 \kluczStart
 B

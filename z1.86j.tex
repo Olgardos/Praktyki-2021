@@ -28,39 +28,55 @@
 \newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
 \begin{document}
 \maketitle
-\kategoria{Wikieł/Z1.84h}
-\zadStart{Zadanie z Wikieł Z 1.84h moja wersja nr [nrWersji]}
-%[p1]:[2,3,4,5,6,7,9,10]
-%[p2]:[2,4,5,8,10,16]
-%[c1]=[p1]**2
-%[c2]=[p1]**3
-%[c3]=[p2]/2
-%[wynik]=1/[p2]
-%[zlywynik1]=1-[wynik]
-%[zlywynik2]=-[wynik]+4
-%[zlywynik3]=2*[wynik]-5
-Rozwiązać równanie:
-$$\sqrt[3]{[p1]}\cdot\left(\frac{1}{[c2]}\right)^{\frac{1-[p2]x}{3}}+[c1]^{[c3]x}=[p1]+\sqrt[3]{[p1]}$$
+\kategoria{Wikieł/Z1.86j}
+\zadStart{Zadanie z Wikieł Z 1.86j moja wersja nr [nrWersji]}
+%[p1]:[3,4,5,6,7,8,9,10,11,12,13,14]
+%[p2]:[2,3,4,5,6,7,8,9,11,12,13]
+%[p3]:[1,2,3]
+%[b]=[p2]**2
+%[bb]=[p1]**2
+%[a]=[p1]**[p3]
+%[c]=[p1]*[p2]
+%[Delta]=[a]**2+4*[b]
+%[sDelta]=[Delta]**(1/2)
+%[tDelta]=int([sDelta])
+%[t1]=int((-[a]-[tDelta])/2)
+%[t2]=int((-[a]+[tDelta])/2)
+%[gcd]=math.gcd([p1],[p2])
+%[gcd1]=int([p1]/[gcd])
+%[gcd2]=int([p2]/[gcd])
+%[Delta]>0 and ([sDelta]).is_integer() is True and [p1]>[p2]
+Rozwiązać nierówność:
+$$[p1]^{2x}+\left(\frac{1}{[p2]}\right)^{-x}\cdot[p1]^{x+[p3]}-[p2]^{2x+2}\leq0$$
 \zadStop
 \rozwStart{Radosław Grzyb}{}
-$$\sqrt[3]{[p1]}\cdot[p1]^{[p2]x-1}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$\frac{\sqrt[3]{[p1]}}{[p1]}\cdot[p1]^{[p2]x}+[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-$$(\frac{\sqrt[3]{[p1]}}{[p1]}+1)\cdot[p1]^{[p2]x}=[p1]+\sqrt[3]{[p1]}$$
-Dzielimy obie strony równania przez $(\frac{\sqrt[3]{[p1]}}{[p1]}+1)$ i otrzymujemy:
-$$[p1]^{[p2]x}=[p1]^{1}$$
-Logarytmując obustronnie otrzymujemy finalny wynik:
-$$[p2]x=1\implies x=[wynik]$$
+Przekształcamy naszą nierówność:
+$$[bb]^{x}+[p2]^{x}\cdot[a]\cdot[p1]^{x}-[b]^{x+1}\leq0$$
+$$[bb]^{x}+[a]\cdot[c]^{x}-[b]\cdot[b]^{x}\leq0$$
+Dzielimy obie strony przez $[c]^{x}$ otrzymując:
+$$\left(\frac{[gcd1]}{[gcd2]}\right)^{x}+[a]-[b]\cdot\left(\frac{[gcd2]}{[gcd1]}\right)^{x}\leq0$$
+Następnie mnożymy obie strony przez $\left(\frac{[gcd1]}{[gcd2]}\right)^{x}$ dostając:
+$$\left(\frac{[gcd1]}{[gcd2]}\right)^{2x}+[a]\left(\frac{[gcd1]}{[gcd2]}\right)^{x}-[b]\leq0$$
+Podstawiając $t=\left(\frac{[gcd1]}{[gcd2]}\right)^{x}$ otrzymamy do rozwiązania nierówność kwadratową:
+$$t^{2}+[a]t-[b]\leq0$$
+$$\Delta_{t}=[a]^2-4\cdot1\cdot(-[b])=[Delta]\implies \sqrt{\Delta_{t}}=[tDelta]$$\\
+Czas znaleźć miejsca zerowe:
+$$t_{1}=\frac{-[a]-[tDelta]}{2}=[t1]$$
+$$t_{2}=\frac{-[a]+[tDelta]}{2}=[t2]$$
+Współczynnik $a$ naszej funkcji kwadratowej jest dodatni oraz odrzucamy ujemne rozwiązania ponieważ $\left(\frac{[gcd1]}{[gcd2]}\right)^{x}\geq0$. Zatem naszym rozwiązaniem jest:
+$$t\geq[t2]$$
+$$\left(\frac{[gcd1]}{[gcd2]}\right)^{x}\geq[t2]\implies x\geq\frac{\ln[t2]}{\ln\left(\frac{[gcd1]}{[gcd2]}\right)}$$
 \rozwStop
 \odpStart
-$$[wynik]$$
+$$x>\frac{\ln[t2]}{\ln\left(\frac{[p1]}{[p2]}\right)}$$
 \odpStop
 \testStart
-A.$$[zlywynik1]$$
-B.$$[wynik]$$
-C.$$[zlywynik2]$$
-D.$$[zlywynik3]$$
+A.$$x>\frac{1}{\ln[p2]}$$
+B.$$x>\ln[t2]\cdot\ln[p1]$$
+C.$$x\geq\frac{\ln[t2]}{\ln\left(\frac{[gcd1]}{[gcd2]}\right)}$$
+D.$$x<\frac{\ln[t2]}{\ln[p3]}$$
 \testStop
 \kluczStart
-B
+C
 \kluczStop
 \end{document}

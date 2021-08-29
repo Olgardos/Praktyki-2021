@@ -1,0 +1,67 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Robert Fidytek}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+
+\begin{document}
+\maketitle
+
+
+\kategoria{Dymkowska, Beger/c3.14a}
+\zadStart{Zadanie z Dymkowskiej, Beger C 3.14a) moja wersja nr [nrWersji]}
+%[p1]:[2,3,4,6,7,8,9]
+%[p2]=[p1]*[p1]
+%[p3]=[p2]*[p2]
+%[wyn]=[p3]*[p1]*10-2*pow([p1],5)
+Za pomocą całki podwójnej obliczyć objętość bryły ograniczonej powierzchniami $$y=x^2, y=[p2], z=0, z=2y$$
+\zadStop
+\rozwStart{Jakub Janik}{}
+Objętość V możemy zapisać jako
+$$V=\{(x,y,z)\in\mathbb{R}^3\colon(x,y)\in D, 0 \leq z \leq 2y\}$$
+Przy czym obszar D wyraża się jako
+$$D\colon-[p1]\leq x \leq [p1], x^2 \leq y \leq [p2]$$
+Przechodzimy do obliczenia objętości
+$$\iint_D 2y\ dxdy=\int_{-[p1]}^{[p1]}dx\int_{x^2}^{[p2]}2y\ dy=\int_{-[p1]}^{[p1]}([p3]-x^4)dx=$$
+$$=[p3]x-\frac{1}{5}x^5\Big|_{-[p1]}^{[p1]}=\frac{[wyn]}{5}$$
+\rozwStop
+\odpStart
+$\frac{[wyn]}{5}$
+\odpStop
+\testStart
+A.$\frac{[wyn]}{5}$
+B.$0$
+C.$-\frac{[wyn]}{5}$
+D.$\infty$
+\testStop
+\kluczStart
+A
+\kluczStop
+
+
+
+\end{document}

@@ -1,0 +1,78 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Robert Fidytek}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+
+\begin{document}
+\maketitle
+
+
+\kategoria{Dymkowska, Beger/c4.7e}
+\zadStart{Zadanie z Dymkowskiej, Beger C 4.7e) moja wersja nr [nrWersji]}
+%[p1]:[2,3,4,5,6,7,8,9,10]
+%[p2]:[2,3,4,5,6,7,8,9,10]
+%[p3]=[p1]*[p2]
+%[p4]=[p1]*[p1]
+%[a]=[p4]*[p1]
+%[b]=[p2]*[p2]
+%[c]=[b]*[p2]*3
+%[a1]=[a]*2
+%[b1]=[b]*3
+%[c1]=4*[c]
+%[wyn]=[a1]*[p2]*4-[a]*[p2]*4+[a]*[p2]
+%[g]=math.gcd([wyn],12)
+%[up]=int([wyn]/[g])
+%[down]=int(12/[g])
+%[down]>1
+Za pomocą całki potrójnej obliczyć objętość bryły ograniczonej powierzchniami
+$$x=0, y=0, [p1]x+[p2]y=[p3], z=0, z=[p4]-y^2$$
+\zadStop
+\rozwStart{Jakub Janik}{}
+Obszar V wyraża się $$0 \leq x \leq [p2], 0 \leq y \leq [p1]-\frac{[p1]}{[p2]}x, 0 \leq z \leq [p4]-y^2$$
+Możemy przejść do obliczenia objętości
+$$\iiint_V dxdydz=\int_0^{[p2]}dx\int_0^{[p1]-\frac{[p1]}{[p2]}x}dy\int_0^{[p4]-y^2}dz=$$
+$$=\int_0^{[p2]}dx\int_0^{[p1]-\frac{[p1]}{[p2]}x}[p4]-y^2\ dy=\int_0^{[p2]}([p4]y-\frac{1}{3}y^3\Big|_0^{[p1]-\frac{[p1]}{[p2]}x})dx=$$
+$$=\int_0^{[p2]}[a]-\frac{[a]}{[p2]}x-\frac{[a]}{3}+\frac{[a]}{[p2]}x-\frac{[a]}{[b]}x^2+\frac{[a]}{[c]}x^3\ dx=$$
+$$=\frac{[a1]}{3}x-\frac{[a]}{[b1]}x^3+\frac{[a]}{[c1]}x^4\Big|_0^{[p2]}=\frac{[up]}{[down]}$$
+\rozwStop
+\odpStart
+$\frac{[up]}{[down]}$
+\odpStop
+\testStart
+A.$\frac{[up]}{[down]}$
+B.$0$
+C.$-\frac{[up]}{[down]}$
+D.$\infty$
+\testStop
+\kluczStart
+A
+\kluczStop
+
+
+
+\end{document}

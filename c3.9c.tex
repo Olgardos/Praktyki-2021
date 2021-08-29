@@ -1,0 +1,72 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Robert Fidytek}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+
+\begin{document}
+\maketitle
+
+
+\kategoria{Dymkowska, Beger/c3.9c}
+\zadStart{Zadanie z Dymkowskiej, Beger C 3.9c) moja wersja nr [nrWersji]}
+%[p1]:[2,3,4,5,6,7,8,9,10]
+Wprowadzając współrzędne biegunowe, obliczyć całkę podwójną po obszarze $$\iint_D e^{-(x^2+y^2)} dxdy, D: x^2+y^2 \leq [p1]$$
+\zadStop
+\rozwStart{Jakub Janik}{}
+Wprowadzamy współrzędne biegunowe, czyli $$x(r,\phi)=r\cdot\cos{(\phi)}$$
+$$y(r,\phi)=r\cdot\sin{(\phi)}$$
+Wtedy obszar D wyraża się następująco $$D: 0 \leq r \leq \sqrt{[p1]}, 0 \leq \phi \leq 2\pi$$
+Przechodzimy do obliczenia całki
+$$\iint_D e^{-r^2}r\ drd\phi$$
+Korzystamy z podstawienia $$r^2=t$$ 
+$$ 2r\ dr=dt$$
+\begin{displaymath}
+\left.\begin{array}{c|c|c}
+r & 0 & \sqrt{[p1]} \\ \hline
+t & 0 & [p1]
+\end{array}\right.
+\end{displaymath}
+Dostajemy
+$$\int_0^{2\pi}d\phi\int_0^{[p1]}\frac{1}{2}e^{-t}\ dt=\int_0^{2\pi}(-\frac{1}{2}e^{-t}\Big|_0^{[p1]})d\phi=\pi(1-\frac{1}{e^{[p1]}})$$
+\rozwStop
+\odpStart
+$\pi(1-\frac{1}{e^{[p1]}})$
+\odpStop
+\testStart
+A.$\pi(1-\frac{1}{e^{[p1]}})$
+B.$0$
+C.$-\pi(1-\frac{1}{e^{[p1]}})$
+D.$\infty$
+\testStop
+\kluczStart
+A
+\kluczStop
+
+
+
+\end{document}

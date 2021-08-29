@@ -1,0 +1,66 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Robert Fidytek}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+
+\begin{document}
+\maketitle
+
+
+\kategoria{Dymkowska, Beger/c3.1g}
+\zadStart{Zadanie z Dymkowskiej, Beger C 3.1g) moja wersja nr [nrWersji]}
+%[p1]:[2,3,4,5,6,7,8,9,10]
+%[p2]:[2,3,4,5,6,7,8,9,10]
+%[y1]=[p1]*21
+%[y2]=[p2]*609
+%[x]=abs([y1]*2*7-[y2]*3)
+%[wyn]=int([x]/12)
+%math.gcd([x],12)==12
+Obliczyć całkę podwójną po prostokącie P $$\iint_P [p1]x^2y-[p2]y^3 dxdy, P: 1\leq x \leq 2, 2 \leq y \leq 5$$
+\zadStop
+\rozwStart{Jakub Janik}{}
+$$\iint_P [p1]x^2y-[p2]y^3\ dxdy=\int_1^2 dx \int_2^5 [p1]x^2 y - [p2]y^3\ dy=$$
+$$=\int_1^2 (\frac{[p1]}{2}x^2 y^2-\frac{[p2]}{4}y^4 \Big|_2^5)\ dx=\int_1^2 \frac{[y1]}{2}x^2 - \frac{[y2]}{4}\ dx=$$
+$$\frac{[y1]}{6}x^3 - \frac{[y2]}{4}x \Big|_1^2=-[wyn]$$
+\rozwStop
+\odpStart
+$-[wyn]$
+\odpStop
+\testStart
+A.$-[wyn]$
+B.$0$
+C.$[wyn]$
+D.$\infty$
+\testStop
+\kluczStart
+A
+\kluczStop
+
+
+
+\end{document}

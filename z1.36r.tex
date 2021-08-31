@@ -1,0 +1,119 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Robert Fidytek}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+
+\begin{document}
+\maketitle
+
+
+\kategoria{Wikieł/Z1.36r}
+\zadStart{Zadanie z Wikieł Z 1.36 r) moja wersja nr [nrWersji]}
+%[a]:[2,3,4,8,9,10,11,12,13]
+%[b]:[2,3,4,5,6,7,8,9]
+%[c]:[6,7,8,9,10,11,12,13,14,15,16,17]
+%[d]:[3,4,5,6,7,8,9]
+%[e]=[b]-4*[c]
+%[e]<0
+%[f]=[a]-[b]+1
+%[g]=[c]+[d]
+%[h]=[b]-[a]-1
+%[i]=[h]^2-4*2*[g]
+%[j]=[a]-[b]+1
+%[k]=[a]-[b]-1
+%[l]=[c]-[d]
+%math.gcd([f],[g])==1 and math.gcd([j],[g])==1 and math.gcd([l],[k])==1 and [g]/[j]>[d] and [k]!=0 and [l]/[k]>[d]
+Rozwiązać równanie: $|x^2+[a]x|=|x^2+[b]x+[c]|+|x-[d]|$.
+\zadStop
+\rozwStart{Klaudia Klejdysz}{}
+Szukamy miejsc zerowych wyrażeń ujętych w wartościach bezwględnych:
+$$|x^2+[a]x|=0$$
+$$x^2+[a]x=0$$
+$$x(x+[a])=0$$
+$$x=0\text{ }\lor\text{ }x=-[a]$$\\
+$$|x^2+[b]x+[c]|=0$$
+$$x^2+[b]x+[c]=0$$
+$$\Delta=[b]^2-4*1*[c]=[e]<0\text{ (brak miejsc zerowych)}$$\\
+$$|x-[d]|=0$$
+$$x=[d]$$\\
+\indent Przypadek 1: $x\in(-\infty,-[a])$
+$$x^2+[a]x=x^2+[b]x+[c]-(x-[d])$$
+$$[a]x=[b]x+[c]-x+[d]$$
+$$([a]-[b]+1)x=[c]+[d]$$
+$$[f]x=[g]$$
+$$x=\frac{[g]}{[f]}$$
+Ostatecznie otrzymujemy:
+$$x\in(-\infty,-[a])\qquad\land\qquad x=\frac{[g]}{[f]}$$
+Czyli z przypadku 1 otrzymujemy sprzeczność, a więc: $x\in\emptyset$.\\
+
+
+Przypadek 2: $x\in[-[a],0]$ $$-(x^2+[a]x)=x^2+[b]x+[c]-(x-[d])$$
+$$-x^2+[a]x=x^2+[b]x+[c]-x+[d]$$
+$$2x^2+([b]-[a]-1)x+[g]=0$$
+$$2x^2+[h]x+[g]=0$$
+$$\Delta=[h]^2-4*2*[g]=[i]<0\text{ (brak miejsc zerowych)}$$\\
+Czyli z przypadku 2 otrzymujemy sprzeczność, a więc: $x\in\emptyset$.\\
+
+
+Przypadek 3: $x\in(0,[d])$ $$x^2+[a]x=x^2+[b]x+[c]-(x-[d])$$
+$$[a]x=[b]x+[c]-x+[d]$$
+$$([a]-[b]+1)x=[g]$$
+$$[j]x=[g]$$
+$$x=\frac{[g]}{[j]}$$
+Ostatecznie otrzymujemy:
+$$x\in(0,[d])\qquad\land\qquad x=\frac{[g]}{[j]}$$
+Czyli z przypadku 3 otrzymujemy sprzeczność, a więc: $x\in\emptyset$.\\
+
+
+Przypadek 4: $x\in[[d],\infty)$ $$x^2+[a]x=x^2+[b]x+[c]+(x-[d])$$
+$$([a]-[b]-1)x=[c]-[d]$$
+$$[k]x=[l]$$
+$$x=\frac{[l]}{[k]}$$
+Ostatecznie otrzymujemy:
+$$x\in[[d],\infty)\qquad\land\qquad x=\frac{[l]}{[k]}$$
+Czyli z przypadku 4 mamy: $x=\frac{[l]}{[k]}$.\\
+Ostatecznym rozwiązaniem wyjściowego równania jest:
+$$x\in\bigg\{\frac{[l]}{[k]}\bigg\}$$
+\rozwStop
+\odpStart
+$x\in\bigg\{\frac{[l]}{[k]}\bigg\}$
+\odpStop
+\testStart
+A. $x\in\bigg\{\frac{[l]}{[k]}\bigg\}$\\
+B. $x\in\mathbb{R}$\\
+C. $x\in\emptyset$\\
+D. $x\in\bigg\{\frac{[k]}{[j]}\bigg\}$
+\testStop
+\kluczStart
+A
+\kluczStop
+
+
+
+\end{document}
+

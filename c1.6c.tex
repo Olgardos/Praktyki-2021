@@ -1,0 +1,73 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage{amsthm}  %pakiet do tworzenia twierdzeń itp.
+\usepackage{amsmath} %pakiet do niektórych symboli matematycznych
+\usepackage{amssymb} %pakiet do symboli mat., np. \nsubseteq
+\usepackage{amsfonts}
+\usepackage{graphicx} %obsługa plików graficznych z rozszerzeniem png, jpg
+\theoremstyle{definition} %styl dla definicji
+\newtheorem{zad}{} 
+\title{Multizestaw zadań}
+\author{Robert Fidytek}
+%\date{\today}
+\date{}
+\newcounter{liczniksekcji}
+\newcommand{\kategoria}[1]{\section{#1}} %olreślamy nazwę kateforii zadań
+\newcommand{\zadStart}[1]{\begin{zad}#1\newline} %oznaczenie początku zadania
+\newcommand{\zadStop}{\end{zad}}   %oznaczenie końca zadania
+%Makra opcjonarne (nie muszą występować):
+\newcommand{\rozwStart}[2]{\noindent \textbf{Rozwiązanie (autor #1 , recenzent #2): }\newline} %oznaczenie początku rozwiązania, opcjonarnie można wprowadzić informację o autorze rozwiązania zadania i recenzencie poprawności wykonania rozwiązania zadania
+\newcommand{\rozwStop}{\newline}                                            %oznaczenie końca rozwiązania
+\newcommand{\odpStart}{\noindent \textbf{Odpowiedź:}\newline}    %oznaczenie początku odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\odpStop}{\newline}                                             %oznaczenie końca odpowiedzi końcowej (wypisanie wyniku)
+\newcommand{\testStart}{\noindent \textbf{Test:}\newline} %ewentualne możliwe opcje odpowiedzi testowej: A. ? B. ? C. ? D. ? itd.
+\newcommand{\testStop}{\newline} %koniec wprowadzania odpowiedzi testowych
+\newcommand{\kluczStart}{\noindent \textbf{Test poprawna odpowiedź:}\newline} %klucz, poprawna odpowiedź pytania testowego (jedna literka): A lub B lub C lub D itd.
+\newcommand{\kluczStop}{\newline} %koniec poprawnej odpowiedzi pytania testowego 
+\newcommand{\wstawGrafike}[2]{\begin{figure}[h] \includegraphics[scale=#2] {#1} \end{figure}} %gdyby była potrzeba wstawienia obrazka, parametry: nazwa pliku, skala (jak nie wiesz co wpisać, to wpisz 1)
+
+\begin{document}
+\maketitle
+
+
+
+\kategoria{Dymkowska,Beger/C1.6c}
+\zadStart{Zadanie z Dymkowska,Beger C 1.6 c) moja wersja nr [nrWersji]}
+%[a]:[2,3,4,5,6,7,8,9]
+%[c]=[a]*[a]
+%[d]=[a]**3
+Obliczyć, całkując przez części $\displaystyle \int x^2sin([a]x)dx$
+\zadStop
+\rozwStart{Mirella Narewska}{}
+$$\text{Całkujemy przez części: }$$
+$$u=x^2 \ v'=sin[a]x$$
+$$u'=2x \ v=-\frac{1}{[a]}cos[a]x$$
+$$\displaystyle \int x^2sin([a]x)dx=\displaystyle \frac{1}{[a]}x^2cos[a]x+ \frac{2}{[a]}\int xcos([a]x)dx=$$
+$$\text{Ponownie całkujemy przez częsci}$$
+$$ f=x \ q'=cos([a]x)$$
+$$f'=1 \ q=1/[a]sin[a]x$$
+$$=\displaystyle \frac{1}{[a]}x^2cos[a]x+ \frac{2}{[a]}\left( \frac{1}{[a]}xsin[a]x-\frac{1}{[a]} \int sin[a]x dx\right)$$
+$$\displaystyle \frac{1}{[a]}x^2cos[a]x+\frac{2}{[c]}xsin([a]x)-\frac{2}{[c]} \int sin[a]xdx=$$
+$$\text{Użyjemy podstawienia: } t=[a]x \Rightarrow dt=[a]dx$$
+$$\displaystyle \frac{1}{[a]}x^2cos[a]x+\frac{2}{[c]}xsin([a]x)-\frac{2}{[d]} \int sint dx=$$
+$$\displaystyle \frac{1}{[a]}x^2cos[a]x+\frac{2}{[c]}xsin([a]x)+\frac{2}{[d]}cos([a]x) +C$$
+\odpStart
+$$\frac{1}{[a]}x^2cos[a]x+\frac{2}{[c]}xsin([a]x)+\frac{2}{[d]}cos([a]x) + C$$
+\odpStop
+\testStart
+A.$\frac{1}{[a]}x^2cos[a]x+\frac{2}{[c]}xsin([a]x)+\frac{2}{[d]}cos([a]x) + C$
+\\
+B.$\frac{1}{[a]}\cdot e^{[a]x+[b]}$
+\\
+C.$\frac{1}{[a]}xe^{[a]x-[b]} -\frac{1}{[c]}e^{[a]x-[b]} + C$
+\\
+D.$e^{[a]x+[b]}$
+\testStop
+\kluczStart
+A
+\kluczStop
+
+
+\end{document}
